@@ -1,14 +1,4 @@
-*{
-	margin: 0;
-	padding: 0;
-}
-html,body{
-	background: #241b2a;
-	overflow-x: hidden;
-}
-.text-center{
-	text-align: center;
-}
+@import url('../common/global.css');
 .footer{
 	position: fixed;
 	bottom: 0;
@@ -44,7 +34,9 @@ html,body{
 .page_message,.page_nearby,.page_profile{
 	display: none;
 }
-
+.page_fate,.page_message,.page_nearby,.page_profile{
+	margin-bottom: 1rem;
+}
 
 /* page_fate */
 .page_fate{
@@ -107,13 +99,9 @@ html,body{
 	width: 2rem;
 	height: 2rem;
 	border-radius: 0.1rem;
-	/*display: inline-block;*/
-	/*vertical-align: top;*/
 	float: left;
 }
-
 .fate_person_list .content{
-	/*display: inline-block;*/
 	width: auto;
 	height: 2rem;
 	color: #ffffff;
@@ -121,10 +109,12 @@ html,body{
 }
 .fate_person_list .name{
 	font-size: 0.32rem;
+	height: .32rem;
 	margin-top: 0.1rem;
 }
 .fate_person_list .info{
 	margin-top: 0.3rem;
+	height: .26rem;
 	font-size: 0.26rem;
 }
 .fate_person_list .motto{
@@ -140,12 +130,12 @@ html,body{
 	width: 50%;
 	display: inline-block;
 	text-align: center;
-	
+	/*margin-left: -0.03rem;*/
 }
 .fate_person_list .love_btn{
 	width: 3.15rem;
 	color: #e43f3f;
-	border: 0.01rem solid #e43f3f;
+	border: 1px solid #e43f3f;
 	border-radius: 1rem;
 	margin: auto;
 	height: 0.6rem;
@@ -154,7 +144,7 @@ html,body{
 .fate_person_list .greet_btn{
 	width: 3.15rem;
 	color: #44a3d4;
-	border: 0.01rem solid #44a3d4;
+	border: 1px solid #44a3d4;
 	border-radius: 1rem;
 	margin: auto;
 	height: 0.6rem;
@@ -211,10 +201,12 @@ html,body{
 }
 .mesage_person_list .name{
 	font-size: 0.32rem;
+	height: .32rem;
 }
 .mesage_person_list .info{
 	margin-top: 0.2rem;
-	font-size: 0.2rem;
+	font-size: 0.28rem;
+	height: .28rem;
 }
 .mesage_person_list .status{
 	margin-top: 0.1rem;
@@ -239,7 +231,33 @@ html,body{
 	margin-top: 0.2rem;
 	border-bottom: 1px solid #3b3142;
 }
-
+.message_none{
+	color: #ffffff;
+	font-size: none;
+}
+.message_none img{
+	display: block;
+	margin: auto;
+	margin-top: 1.8rem;
+	width: 3.6rem;
+	height: 3.6rem;
+}
+.message_none .none_hint{
+	font-size: .32rem;
+	text-align: center;
+	margin-top: .38rem;
+}
+.message_none .fill_btn{
+	font-size: .32rem;
+	width: 3rem;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	background: #e43f3f;
+	margin: auto;
+	margin-top: .4rem;
+	border-radius: 2rem;
+}
 /* page_nearby */
 .page_nearby{
 	font-size: 0;
@@ -287,10 +305,12 @@ html,body{
 }
 .nearby_person_list .name{
 	font-size: 0.32rem;
+	height: .32rem;
 }
 .nearby_person_list .info{
 	margin-top: 0.42rem;
 	font-size: 0.26rem;
+	height: .26rem;
 }
 .nearby_person_list .status{
 	margin-top: 0.2rem;
@@ -367,17 +387,20 @@ html,body{
 }
 .profile_header .name{
 	font-size: 0.32rem;
+	height: .32rem;
 	color: #ffffff;
 }
 .profile_header .status{
 	font-size: 0.24rem;
+	height: .24rem;
 	color: #aaaaaa;
 	margin-top: 0.16rem;
 }
 .profile_header .info{
 	font-size: 0.26rem;
+	height: .26rem;
 	color: #ffffff;
-	margin-top: 0.3rem;
+	margin-top: 0.2rem;
 }
 .profile_header .info .info_degree{
     font-size: 0.22rem;

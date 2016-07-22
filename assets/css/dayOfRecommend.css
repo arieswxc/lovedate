@@ -1,0 +1,57 @@
+@import url('../common/global.css');
+body{
+	color: #ffffff;
+}
+.welcome_back{
+	font-size: .32rem;
+	margin-top: 1rem;
+	text-align: center;
+}
+.welcome_back div:last-child{
+	margin-top: .2rem;
+}
+.person_lists{
+	font-size: 0;
+	margin-top: .6rem;
+}
+.person_item{
+	height: 1.8rem;
+}
+.person_item img{
+	float: left;
+	margin-left: .2rem;
+	width: 1.4rem;
+	height: 1.4rem;
+	margin-top: .2rem;
+	border-radius: .1rem;
+}
+.info_box{
+	float: left;
+	overflow: hidden;
+	margin-left: .3rem;
+}
+.name{
+	font-size: .32rem;
+	height: .32rem;
+	margin-top: .4rem;
+}
+.info{
+	font-size: .26rem;
+	margin-top: .42rem;
+}
+.border{
+	border-bottom: 1px solid #3b3142;
+	margin-left: 1.9rem;
+	margin-top: .18rem;
+}
+.say_hello{
+	font-size: .32rem;
+	width: 5.5rem;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	background: #e43f3f;
+	border-radius: 2rem;
+	margin: auto;
+	margin-top: .5rem;
+}

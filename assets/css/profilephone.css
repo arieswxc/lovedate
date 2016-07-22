@@ -1,0 +1,60 @@
+@import url('../common/global.css');
+.phone_box{
+	width: 6rem;
+	height: .8rem;
+	position: relative;
+	margin: auto;
+}
+.phone{
+	font-size: .26rem;
+	display: block;
+	margin: auto;
+	width: 6rem;
+	height: .8rem;
+	line-height: .8rem;
+	border: 1px solid #e43f3f;
+	color: #ffffff;
+	border-radius: 2rem;
+	background: #241b2a;
+	text-indent: .4rem;
+}
+.send_again_btn{
+	font-size: .24rem;
+	color: #ffffff;
+	background: #e43f3f;
+	width: 1.8rem;
+	position: absolute;
+	height: .69rem;
+	line-height: .69rem;
+	text-align: center;
+	border-radius: 2rem;
+	top: .06rem;
+	right: .05rem;
+}
+.varify_num{
+	font-size: .26rem;
+	display: block;
+	margin: auto;
+	margin-top: .4rem;
+	width: 6rem;
+	height: .8rem;
+	line-height: .8rem;
+	border: 1px solid #aaaaaa;
+	color: #ffffff;
+	border-radius: 2rem;
+	background: #241b2a;
+	text-indent: .4rem;
+}
+.next{
+	font-size: .32rem;
+	display: block;
+	margin: auto;
+	margin-top: .4rem;
+	width: 6rem;
+	height: .8rem;
+	line-height: .8rem;
+	color: #ffffff;
+	border-radius: 2rem;
+	background: #e43f3f;
+	text-align: center;
+}

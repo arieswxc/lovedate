@@ -1,11 +1,11 @@
 // Seajs配置
 seajs.config({
     paths: {
-        'common': '../common'
+        'common': '/lovedate/common'
     },
 
     alias: {
-        'jquery': 'common/jquery.min.js'
+        'jquery': 'common/js/jquery.min.js'
         // 'tools': '../common/tools',
         // // 'doT': '../lib/doT',
         // 'showBigPic': '../components/showBigPic',

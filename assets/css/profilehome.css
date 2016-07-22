@@ -1,0 +1,136 @@
+@import url('../common/global.css');
+body{
+	background: #19191b;
+}
+.head_img{
+	float: left;
+	height: 1.52rem;
+	width: 1.52rem;
+	margin-left: .4rem;
+	border-radius: 50%;
+}
+.head_info{
+	float: left;
+	margin-left: .4rem;
+	overflow: hidden;
+}
+.name{
+	font-size: .32rem;
+	color: #ffffff;
+	height: .32rem;
+	margin-top: .1rem;
+}
+.age_height_education{
+	font-size: .26rem;
+	height: .26rem;
+	color: #aaaaaa;
+	margin-top: .26rem;
+}
+.address{
+	font-size: .26rem;
+	height: .26rem;
+	color: #aaaaaa;
+	margin-top: .26rem;
+}
+.connect_btns{
+	list-style: none;
+	font-size: 0;
+	margin-top: .4rem;
+	overflow: hidden;
+	margin-bottom: .2rem;
+}
+.connect_btn{
+	float: left;
+	width: 33%;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+}
+.connect_btn img{
+	width: .48rem;
+	height: .48rem;
+	vertical-align: middle;
+}
+.love span{
+	font-size: .28rem;
+	color: #f47272;
+	vertical-align: middle;
+	margin-left: .1rem;
+}
+.greet span{
+	font-size: .28rem;
+	color: #85d1ea;
+	vertical-align: middle;
+	margin-left: .1rem;
+}
+.connect span{
+	font-size: .28rem;
+	color: #ad8dd0;
+	vertical-align: middle;
+	margin-left: .1rem;
+}
+.albums{
+	font-size: 0;
+	background: #272728;
+	overflow: hidden;
+	padding: .2rem 0;
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+.albums img{
+	/*float: left;*/
+	display: inline-block;
+	width: 1.6rem;
+	height: 1.6rem;
+	margin-right: .2rem;
+}
+.classify_infos{
+	font-size: 0;
+	/*margin-top: .2rem;*/
+	background: #696363;
+	overflow: hidden;
+	
+}
+.classify_item{
+	margin-top: .2rem;
+	margin-left: .2rem;
+}
+.detail_header{
+	font-size: .26rem;
+	color: #aaaaaa;
+	height: .4rem;
+	line-height: .4rem;
+}
+.motto{
+	font-size: .3rem;
+	line-height: .38rem;
+	color: #ffffff;
+	padding: .2rem 0;
+}
+.detail_item{
+	height: .8rem;
+	line-height: .8rem;
+	border-bottom: 1px solid #ffffff;
+}
+.detail_lists .detail_item:last-child{
+	border: none;
+	padding-bottom: .2rem;
+}
+.detail_item img{
+	float: left;
+	width: .36rem;
+	height: .36rem;
+	margin-top: .21rem;
+}
+.key{
+	font-size: .26rem;
+	color: #aaaaaa;
+	float: left;
+	margin-left: .1rem;
+}
+.value{
+	font-size: .30rem;
+	color: #ffffff;
+	float: right;
+	margin-right: .2rem;
+}

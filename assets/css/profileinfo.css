@@ -1,0 +1,221 @@
+@import url('../common/global.css');
+.classify_lists{
+	list-style: none;
+	margin-bottom: .2rem;
+}
+.classify_item{}
+.info_lists{
+	list-style: none;
+	background: #312837;
+	/*font-size: 0;*/
+}
+.info_item{
+	margin-left: .2rem;
+	height: .88rem;
+	line-height: .88rem;
+	border-bottom: 1px solid #3b3142;
+}
+.info_title{
+	font-size: .28rem;
+	color: #aaaaaa;
+	background: #241b2a;
+	height: .56rem;
+	line-height: .56rem;
+	margin-top: .2rem;
+	margin-left: .2rem;
+}
+.title{
+	font-size: .28rem;
+	color: #aaaaaa;
+	float: left;
+}
+.value{
+	font-size: .30rem;
+	color: #ffffff;
+	float: right;
+	margin-right: .2rem;
+
+}
+.motto{
+	font-size: .3rem;
+	color: #ffffff;
+}
+
+
+
+/*  profileinfo_qq */
+.qq_big{
+	display: block;
+	margin: auto;
+	margin-top: .52rem;
+	width: 3rem;
+	height: 3rem;
+}
+.qq_box{
+	width: 6rem;
+	height: .8rem;
+	position: relative;
+	margin: auto;
+	margin-top: 1rem;
+}
+.qqinput{
+	font-size: .26rem;
+	display: block;
+	margin: auto;
+	width: 6rem;
+	height: .8rem;
+	line-height: .8rem;
+	border: 1px solid #e43f3f;
+	color: #ffffff;
+	border-radius: 2rem;
+	background: #241b2a;
+	text-indent: 1.3rem;
+}
+.wechatinput{
+	font-size: .26rem;
+	display: block;
+	margin: auto;
+	width: 6rem;
+	height: .8rem;
+	line-height: .8rem;
+	border: 1px solid #e43f3f;
+	color: #ffffff;
+	border-radius: 2rem;
+	background: #241b2a;
+	text-indent: 1.6rem;
+}
+.qq_hint{
+	font-size: .3rem;
+	height: .8rem;
+	line-height: .8rem;
+	color: #ffffff;
+	position: absolute;
+	left: .4rem;
+	top: 0;
+}
+.varify_num{
+	font-size: .26rem;
+	display: block;
+	margin: auto;
+	margin-top: .4rem;
+	width: 6rem;
+	height: .8rem;
+	line-height: .8rem;
+	border: 1px solid #aaaaaa;
+	color: #ffffff;
+	border-radius: 2rem;
+	background: #241b2a;
+	text-indent: .4rem;
+}
+.switch_box{
+	font-size: .3rem;
+	color: #ffffff;
+	position: relative;
+	width: 6rem;
+	height: .8rem;
+	line-height: .8rem;
+	position: relative;
+	border: 1px solid #e43f3f;
+	border-radius: 2rem;
+	margin: auto;
+	margin-top: .2rem;
+}
+.switch_box span{
+	margin-left: .4rem;
+}
+.switch{
+	height: .8rem;
+	line-height: .8rem;
+	position: absolute;
+	top: 0;
+	right: .4rem;
+	font-size: 0;
+}
+.switch img{
+	vertical-align: middle;
+	height: .6rem;
+}
+.qq_confirm{
+	font-size: .32rem;
+	display: block;
+	margin: auto;
+	margin-top: .4rem;
+	width: 6rem;
+	height: .8rem;
+	line-height: .8rem;
+	color: #ffffff;
+	border-radius: 2rem;
+	background: #e43f3f;
+	text-align: center;
+}
+
+/* profileinfo_nickname */
+.nicknameinput{
+	font-size: .3rem;
+	width: 100%;
+	color: #ffffff;
+	height: .88rem;
+	line-height: .88rem;
+	background: #312837;
+	border:none;
+	text-indent: .3rem;
+	display: block;
+}
+.nick_confirm{
+	font-size: .32rem;
+	color: #ffffff;
+	background: #e43f3f;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	width: 5.5rem;
+	border-radius: 2rem;
+	margin: auto;
+	margin-top: .8rem;
+}
+
+/* profileinfo_sex */
+.sex_confirm{
+	font-size: .32rem;
+	color: #ffffff;
+	background: #e43f3f;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	width: 5.5rem;
+	border-radius: 2rem;
+	margin: auto;
+	margin-top: .8rem;
+}
+.checkbox{
+	font-size: 0;
+	height: .8rem;
+	line-height: .8rem;
+	margin-left: .2rem;
+	margin-bottom: .2rem;
+}
+.sex_img{
+	float: left;
+	width: .48rem;
+	height: .48rem;
+	margin-top: .16rem;
+}
+.sex_text{
+	font-size: .3rem;
+	color: #ffffff;
+	margin-left: .1rem;
+	float: left;
+
+}
+.check_img{
+	float: right;
+	width: .48rem;
+	height: .48rem;
+	margin-right: .2rem;
+	margin-top: .16rem;
+}
+.sex_notice{
+	font-size: .24rem;
+	color: #ffffff;
+	margin-left: .2rem;
+}

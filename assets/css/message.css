@@ -1,0 +1,158 @@
+@import url('../common/global.css');
+.header{
+	font-size: 0;
+}
+.person{
+	overflow: hidden;
+}
+.headImg{
+	width: 1.4rem;
+	height: 1.4rem;
+	border-radius: .1rem;
+	margin-left: .4rem;
+	float: left;
+}
+.info{
+	font-size: .26rem;
+	color: #ffffff;	
+	margin-left: .2rem;
+	float: left;
+}
+.selfInfo{
+	height: .26rem;
+	margin-top: .1rem;
+}
+.qqInfo{
+	height: .26rem;
+	margin-top: .21rem;
+}
+.phoneInfo{
+	height: .26rem;
+	margin-top: .21rem
+}
+.next{
+	font-size: .26rem;
+	background: #e43f3f;
+	color: #ffffff;
+	height: .5rem;
+	line-height: .5rem;
+	border-radius: .1rem;
+	margin-right: .4rem;
+	margin-top: .45rem;
+	float: right;
+	width: 1.4rem;
+	text-align: center;
+}
+.border{
+	margin-top: .2rem;
+	margin-left: .4rem;
+	margin-right: .4rem;
+	border-bottom: 1px solid #3b3142;
+}
+
+.content{
+	margin-top: .2rem;
+	font-size: 0;
+}
+.time{
+	font-size: .22rem;
+	color: #ffffff;
+	border-radius: .06rem;
+	background: #3b3142;
+	height: .36rem;
+	line-height: .36rem;
+	width: 1.84rem;
+	text-align: center;
+	margin: auto;
+	margin-top: .3rem;
+}
+.talk{
+	margin-top: .3rem;
+	overflow: hidden;
+}
+.talk img{
+	float: left;
+	margin-left: .2rem;
+	width: .8rem;
+	height: .8rem;
+	border-radius: .1rem;
+}
+.talk .talk_message{
+	font-size: 0.28rem;
+	line-height: .36rem;
+	color: #333333;
+	background: #ffffff;
+	float: left;
+	margin-left: .2rem;
+	padding: .2rem;
+	width: auto;
+	max-width: 4rem;
+	border-radius: .1rem;
+}
+.talk_right{
+	margin-top: .3rem;
+	overflow: hidden;
+}
+.talk_right img{
+	float: right;
+	margin-right: .2rem;
+	width: .8rem;
+	height: .8rem;
+	border-radius: .1rem;
+}
+.talk_right .talk_message{
+	font-size: 0.28rem;
+	line-height: .36rem;
+	color: #333333;
+	background: #E0B1B1;
+	float: right;
+	margin-right: .2rem;
+	padding: .2rem;
+	width: auto;
+	max-width: 4rem;
+	border-radius: .1rem;
+}
+
+
+
+.foot_send{
+	position: fixed;
+	bottom: 0;
+	background: #ffffff;
+	height: .98rem;
+	width: 100%;
+}
+input.send_message{
+	/*-webkit-appearance: none; 
+	-moz-appearance: none; 
+	-o-appearance: none; 
+	appearance: none;*/
+}
+.send_message{
+	font-size: .28rem;
+	margin-top: .11rem;
+	margin-left: .2rem;
+	width: 5.7rem;
+	height: .76rem;
+	line-height: .76rem;
+	color: #333333;
+	float: left;
+	border-radius: .08rem;
+	border: 1px solid #aaaaaa;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.send_btn{
+	font-size: .32rem;
+	float: left;
+	width: 1.2rem;
+	height: .76rem;
+	line-height: .76rem;
+	margin-top: .11rem;
+	margin-left: .2rem;
+	background: #e43f3f;
+	color: #ffffff;
+	border-radius: .08rem;
+	text-align: center;
+}

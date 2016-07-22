@@ -1,0 +1,35 @@
+@import url('../common/global.css');
+.condition_lists{
+	font-size: 0;
+	list-style: none;
+}
+.condition_item{
+	height: 1rem;
+	background: #312837;
+	color: #ffffff;
+}
+.title{
+	font-size: .28rem;
+	float: left;
+	margin-left: .2rem;
+	margin-top: .36rem;
+}
+.condition_item img{
+	float: right;
+	width: .48rem;
+	height: .48rem;
+	margin-right: .2rem;
+	margin-top: .26rem;
+}
+.value{
+	font-size: .30rem;
+	float: right;
+	margin-top: .35rem;
+
+}
+
+.border{
+	border-bottom: 1px solid #3b3142;
+	margin-left: .2rem;
+	margin-top: .24rem;
+}

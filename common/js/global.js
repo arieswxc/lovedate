@@ -6,3 +6,8 @@
         // 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px';
     }, false);
 })();
+
+
+var globalState = {
+	
+}

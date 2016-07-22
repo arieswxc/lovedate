@@ -1,0 +1,65 @@
+@import url('../common/global.css');
+.person_lists{
+	list-style: none;
+}
+.person_item{
+	height: 1.6rem;
+}
+.box{
+	overflow: hidden;
+}
+.head_img{
+	float: left;
+	margin-left: .2rem;
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: .1rem;
+}
+.content{
+	font-size: 0;
+	float: left;
+	margin-left: .2rem;
+}
+.name{
+	font-size: .3rem;
+	height: .3rem;
+	color: #ffffff;
+	margin-top: .06rem;
+}
+.name_huangguan{
+	color: #e43f3f;
+}
+.name_huangguan span{
+	/*vertical-align: middle;*/
+}
+.name_huangguan img{
+	width: .36rem;
+	height: .36rem;
+	margin-left: .1rem;
+	vertical-align: top;
+}
+.info{
+	font-size: .24rem;
+	height: .24rem;
+	color: #ffffff;
+	margin-top: .13rem;
+}
+.time{
+	font-size: .24rem;
+	height: .24rem;
+	color: #aaaaaa;
+	margin-top: .13rem;
+}
+.right{
+	display: block;
+	float: right;
+	width: .32rem;
+	height: .32rem;
+	margin-top: .44rem;
+	margin-right: .2rem;
+}
+.border{
+	margin-left: 1.6rem;
+	margin-top: .2rem;
+	border-bottom: 1px solid #3b3142;
+}

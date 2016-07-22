@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	background: #241b2a;
+	overflow-x: hidden;
+}
+input{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+ul, li{
+	list-style: none;
+}
+.fontsize_0{
+	font-size: 0;
+}
+.text-center{
+	text-align: center;
+}
+.overflow_hidden{
+	overflow: hidden;
+}
+.height_2{
+	height: .2rem;
+}
+.header_back{
+	overflow: hidden;
+	height: 0.68rem;
+}
+.header_back img{
+	width: 0.48rem;
+	height: 0.48rem;
+	margin-left: .1rem;
+	margin-top: .1rem;
+	float: left;
+}

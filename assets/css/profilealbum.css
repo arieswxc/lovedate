@@ -1,0 +1,31 @@
+@import url('../common/global.css');
+.album{
+	font-size: 0;
+}
+.album img{
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: .1rem;
+}
+.add_btn{
+	margin-left: .25rem;
+}
+.img_box{
+	float: left;
+	margin-right: .2rem;
+	position: relative;
+}
+.check_status{
+	font-size: .24rem;
+	height: .4rem;
+	line-height: .4rem;
+	text-align: center;
+	opacity: .5;
+	color: #ffffff;
+	background: black;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+    border-radius: 0 0 0.1rem 0.1rem;
+	width: 100%;
+}
