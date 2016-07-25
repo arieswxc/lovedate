@@ -122,6 +122,11 @@
 	height: .98rem;
 	width: 100%;
 }
+.can_send{
+	width: 100%;
+	height: 100%;
+}
+
 input.send_message{
 	/*-webkit-appearance: none; 
 	-moz-appearance: none; 
@@ -155,4 +160,24 @@ input.send_message{
 	color: #ffffff;
 	border-radius: .08rem;
 	text-align: center;
+}
+.cannot_send{
+	width: 100%;
+	height: 100%;
+	background: #e43f3f;
+	font-size: 0;
+	line-height: .98rem;
+	text-align: center;
+}
+.cannot_send img{
+	width: .48rem;
+    height: .48rem;
+    vertical-align: middle;
+}
+.cannot_send span{
+	font-size: .32rem;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .16rem;
 }

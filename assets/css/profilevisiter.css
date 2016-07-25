@@ -63,3 +63,70 @@
 	margin-top: .2rem;
 	border-bottom: 1px solid #3b3142;
 }
+.no_permission{
+	font-size: 0;
+	margin-top: .12rem;
+	text-align: center;
+}
+.no_permission img{
+	width: 4rem;
+	height: 4rem;
+}
+.name_hint{
+	font-size: .36rem;
+	color: #ffffff;
+}
+.visiter_hint{
+	font-size: .32rem;
+	color: #ffffff;
+	margin-top: .26rem;
+}
+.recent_days{
+	color: #1c75bc;
+}
+.recent_visiter{
+	color:#e43f3f;
+}
+.vip_box{
+	width: 5.7rem;
+	margin: auto;
+	margin-top: 1rem;
+	overflow: hidden;
+}
+.vip_sign{
+	float: left;
+	font-size: .32rem;
+	margin: auto;
+	color: #ffffff;
+	width: .66rem;
+	height: .38rem;
+	line-height: .38rem;
+	border-radius: 2rem;
+	background: #D4CCDA;
+	z-index: 2;
+}
+.border_left,.border_right{
+	width: 2.48rem;
+	border-bottom: 1px solid #3b3142;
+	float: left;
+	margin-top: .19rem;
+}
+.member_text.one{
+	margin-top: .58rem;
+}
+.member_text{
+	font-size: .28rem;
+	line-height: .38rem;
+	color: #ffffff;
+}
+.member_btn{
+	font-size: .32rem;
+	height: .8rem;
+	line-height: .8rem;
+	width: 5.5rem;
+	background: #e43f3f;
+	color: #ffffff;
+	border-radius: 2rem;
+	margin: auto;
+	margin-top: .8rem;
+}

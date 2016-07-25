@@ -134,3 +134,12 @@ body{
 	float: right;
 	margin-right: .2rem;
 }
+.front{
+	width: .04rem;
+	height: .24rem;
+	background: #e43f3f;
+	border-radius: .02rem;
+	float: left;
+	margin-top: .08rem;
+	margin-right: .1rem;
+}

@@ -233,7 +233,7 @@
 }
 .message_none{
 	color: #ffffff;
-	font-size: none;
+	font-size: 0;
 }
 .message_none img{
 	display: block;

@@ -7,15 +7,15 @@
 	height: 1.6rem;
 	border-radius: .1rem;
 }
-.add_btn{
+.album .add_btn{
 	margin-left: .25rem;
 }
-.img_box{
+.album .img_box{
 	float: left;
 	margin-right: .2rem;
 	position: relative;
 }
-.check_status{
+.album .check_status{
 	font-size: .24rem;
 	height: .4rem;
 	line-height: .4rem;
@@ -28,4 +28,44 @@
 	left: 0;
     border-radius: 0 0 0.1rem 0.1rem;
 	width: 100%;
+}
+
+
+/* profilealbum_one  */
+.go_back{
+	position: fixed;
+	top: 0.1rem;
+	left: 0.1rem;
+	height: .48rem;
+	width: .48rem;
+	z-index: 1;
+}
+.album_one{
+	font-size: 0;
+}
+.album_one .img_box{
+	float: left;
+	width: 33.3%;
+	margin-top: .15rem;
+	position: relative;
+}
+.album_one .album_img{
+	width: 2.4rem;
+	height: 2.4rem;
+}
+.album_one .img_box.one{
+	text-align: left;
+}
+.album_one .img_box.two{
+	text-align: center;
+}
+.album_one .img_box.three{
+	text-align: right;
+}
+.album_one .img_box .check{
+	width: .48rem;
+	height: .48rem;
+	position: absolute;
+	top: .1rem;
+	right: .1rem;
 }

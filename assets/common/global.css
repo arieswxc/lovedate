@@ -14,6 +14,12 @@ input{
 ul, li{
 	list-style: none;
 }
+.text_center{
+	text-align: center;
+}
+.width_100{
+	width: 100%;
+}
 .fontsize_0{
 	font-size: 0;
 }

@@ -7,7 +7,10 @@
     }, false);
 })();
 
-
-var globalState = {
-	
+var LS = localStorage;
+var globalState = LS.globalState ? JSON.parse(LS.globalState) : {
+	footerIndex : 0,
+	setFooterIndex : 'function(value) {var self = this;self.footerIndex = value;LS.globalState = JSON.stringify(self);}'
 }
+console.log(globalState);
+console.log(LS.globalState);
