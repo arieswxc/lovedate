@@ -4,7 +4,7 @@
 */
 define(function(require,exports,module) {
 	var indexProfile = require('./index_profile.js')
-
+	var globalState = require('../common/js/globalState');
 	//底部菜单
 	var footer = {
 		footerIndex: 0,
@@ -28,6 +28,7 @@ define(function(require,exports,module) {
 		
 		init: function() {
 			var self = this;
+			console.log(globalState);
 			self.setFooterIndex(globalState.footerIndex, true);
 
 			self.view.find('.footer_btn').click(function(e) {
