@@ -7,17 +7,17 @@
 	<script src="../common/js/sea.min.js"></script>
 	<script src="../common/js/config.js"></script>
 	<script src="../common/js/global.js"></script>
+	<script src="../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../assets/css/index.css">
 </head>
 <body>
 	<div class="page page_fate">
 		<ul class="fate_header">
-			<li><img src="../assets/img/headImg.jpg"></li>
-			<li><img src="../assets/img/headImg.jpg"></li>
-			<li><img src="../assets/img/headImg.jpg"></li>
-			<li><img src="../assets/img/headImg.jpg"></li>
-			<li><img src="../assets/img/headImg.jpg"></li>
+			<!-- <li><img src="../assets/img/headImg.jpg"></li> -->
 		</ul>
+		<script type="text/x-dot-template" id="fate_header_item">
+			<li><img src="{{=it.photo_url}}"></li>
+		</script>
 
 		<div class="fate_ad">
 			<img src="../assets/img/horn.png">
@@ -25,12 +25,12 @@
 		</div>
 
 		<ul class="fate_person_list">
-			<li class="person_item">
+			<!-- <li class="person_item">
 				<div class="person_box">
 					<img class="head_img" src="../assets/img/headImg.jpg">
 					<div class="content">
 						<div class="name">徒有琴</div>
-						<div class="info"><img src=""> 24岁 <img src=""> 173cm <img src=""> 浙江</div>
+						<div class="info"><img src="../assets/img/fate_age.png">24岁 <img src="../assets/img/fate_height.png">173cm <img src="../assets/img/fate_position.png">浙江</div>
 						<div class="motto">爱需要两个人的努力，一个人的埋头苦干只能是一份单恋</div>
 					</div>
 				</div>
@@ -42,27 +42,30 @@
 						<div class="greet_btn"><img class="greet_img" src="../assets/img/greet.png"><span>已打招呼</span></div>
 					</div>
 				</div>	
-			</li>
-			<li class="person_item">
-				<div class="person_box">
-					<img class="head_img" src="../assets/img/headImg.jpg">
-					<div class="content">
-						<div class="name">徒有琴</div>
-						<div class="info"><img src=""> 24岁 <img src=""> 173cm <img src=""> 浙江</div>
-						<div class="motto">爱需要两个人的努力，一个人的埋头苦干只能是一份单恋</div>
-					</div>
-				</div>
-				<div class="action">
-					<div class="btn_box">
-						<div class="love_btn"><img class="love_img" src="../assets/img/love.png"><span>已喜欢</span></div>
-					</div>
-					<div class="btn_box">
-						<div class="greet_btn"><img class="greet_img" src="../assets/img/greet.png"><span>已打招呼</span></div>
-					</div>
-				</div>	
-			</li>
+			</li> -->
 		</ul>
+		<script type="text/x-dot-template" id="fate_person_item">
+	       <li class="person_item">
+				<div class="person_box">
+					<img class="head_img" src="{{=it.photoUrl}}">
+					<div class="content">
+						<div class="name">{{=it.name}}</div>
+						<div class="info"><img src="../assets/img/fate_age.png"><span>{{=it.age}}岁</span> <img src="../assets/img/fate_height.png"><span>{{=it.height}}cm</span> <img src="../assets/img/fate_position.png"><span>{{=it.position}}</span></div>
+						<div class="motto">爱需要两个人的努力，一个人的埋头苦干只能是一份单恋</div>
+					</div>
+				</div>
+				<div class="action">
+					<div class="btn_box">
+						<div class="love_btn"><img class="love_img" src="../assets/img/love.png"><span>{{=(it.isLove?'已喜欢':'喜欢')}}</span></div>
+					</div>
+					<div class="btn_box">
+						<div class="greet_btn"><img class="greet_img" src="../assets/img/greet.png"><span>已打招呼</span></div>
+					</div>
+				</div>	
+			</li>
+	    </script>
 	</div>
+
 
 	<div class="page page_message">
 		<ul class="mesage_person_list" style="display:none">
@@ -120,7 +123,7 @@
 	<div class="page page_nearby">
 		<div class="nearby_info">你现在<span class="position">西溪附近</span>下面的美女最近在你附近出没过，赶紧给她们打个招呼</div>
 		<ul class="nearby_person_list">
-			<li class="person_item">
+			<!-- <li class="person_item">
 				<div class="box">
 					<img class="head_img" src="../assets/img/headImg.jpg">
 					<div class="content">
@@ -133,120 +136,25 @@
 					</div>
 				</div>
 				<div class="border"></div>
-			</li>
-			<li class="person_item">
-				<div class="box">
-					<img class="head_img" src="../assets/img/headImg.jpg">
-					<div class="content">
-						<div class="name">长安不问</div>
-						<div class="info">27岁  . 156cm</div>
-					</div>
-					<div class="status">
-						<div class="time"><img src="../assets/img/position.png"><span>0.4km</span></div>
-						<div class="is_read"><img src="../assets/img/greet_nearby.png"><span>打招呼</span></div>
-					</div>
-				</div>
-				<div class="border"></div>
-			</li>
-			<li class="person_item">
-				<div class="box">
-					<img class="head_img" src="../assets/img/headImg.jpg">
-					<div class="content">
-						<div class="name">长安不问</div>
-						<div class="info">27岁  . 156cm</div>
-					</div>
-					<div class="status">
-						<div class="time"><img src="../assets/img/position.png"><span>0.4km</span></div>
-						<div class="is_read"><img src="../assets/img/greet_nearby.png"><span>打招呼</span></div>
-					</div>
-				</div>
-				<div class="border"></div>
-			</li>
-			<li class="person_item">
-				<div class="box">
-					<img class="head_img" src="../assets/img/headImg.jpg">
-					<div class="content">
-						<div class="name">长安不问</div>
-						<div class="info">27岁  . 156cm</div>
-					</div>
-					<div class="status">
-						<div class="time"><img src="../assets/img/position.png"><span>0.4km</span></div>
-						<div class="is_read"><img src="../assets/img/greet_nearby.png"><span>打招呼</span></div>
-					</div>
-				</div>
-				<div class="border"></div>
-			</li>
-			<li class="person_item">
-				<div class="box">
-					<img class="head_img" src="../assets/img/headImg.jpg">
-					<div class="content">
-						<div class="name">长安不问</div>
-						<div class="info">27岁  . 156cm</div>
-					</div>
-					<div class="status">
-						<div class="time"><img src="../assets/img/position.png"><span>0.4km</span></div>
-						<div class="is_read"><img src="../assets/img/greet_nearby.png"><span>打招呼</span></div>
-					</div>
-				</div>
-				<div class="border"></div>
-			</li>
-			<li class="person_item">
-				<div class="box">
-					<img class="head_img" src="../assets/img/headImg.jpg">
-					<div class="content">
-						<div class="name">长安不问</div>
-						<div class="info">27岁  . 156cm</div>
-					</div>
-					<div class="status">
-						<div class="time"><img src="../assets/img/position.png"><span>0.4km</span></div>
-						<div class="is_read"><img src="../assets/img/greet_nearby.png"><span>打招呼</span></div>
-					</div>
-				</div>
-				<div class="border"></div>
-			</li>
-			<li class="person_item">
-				<div class="box">
-					<img class="head_img" src="../assets/img/headImg.jpg">
-					<div class="content">
-						<div class="name">长安不问</div>
-						<div class="info">27岁  . 156cm</div>
-					</div>
-					<div class="status">
-						<div class="time"><img src="../assets/img/position.png"><span>0.4km</span></div>
-						<div class="is_read"><img src="../assets/img/greet_nearby.png"><span>打招呼</span></div>
-					</div>
-				</div>
-				<div class="border"></div>
-			</li>
-			<li class="person_item">
-				<div class="box">
-					<img class="head_img" src="../assets/img/headImg.jpg">
-					<div class="content">
-						<div class="name">长安不问</div>
-						<div class="info">27岁  . 156cm</div>
-					</div>
-					<div class="status">
-						<div class="time"><img src="../assets/img/position.png"><span>0.4km</span></div>
-						<div class="is_read"><img src="../assets/img/greet_nearby.png"><span>打招呼</span></div>
-					</div>
-				</div>
-				<div class="border"></div>
-			</li>
-			<li class="person_item">
-				<div class="box">
-					<img class="head_img" src="../assets/img/headImg.jpg">
-					<div class="content">
-						<div class="name">长安不问</div>
-						<div class="info">27岁  . 156cm</div>
-					</div>
-					<div class="status">
-						<div class="time"><img src="../assets/img/position.png"><span>0.4km</span></div>
-						<div class="is_read"><img src="../assets/img/greet_nearby.png"><span>打招呼</span></div>
-					</div>
-				</div>
-				<div class="border"></div>
-			</li>
+			</li> -->
 		</ul>
+
+		<script type="text/x-dot-template" id="nearby_person_item">
+			<li class="person_item">
+				<div class="box">
+					<img class="head_img" src="{{=it.photoUrl}}">
+					<div class="content">
+						<div class="name">{{=it.name}}</div>
+						<div class="info">{{=it.age}}岁  . {{=it.height}}cm</div>
+					</div>
+					<div class="status">
+						<div class="time"><img src="../assets/img/position.png"><span>{{=it.distance/1000}}km</span></div>
+						<div class="is_read"><img src="../assets/img/greet_nearby.png"><span>打招呼</span></div>
+					</div>
+				</div>
+				<div class="border"></div>
+			</li>
+		</script>
 
 		<div class="nearby_greet_btn">一键打招呼</div>
 	</div>
@@ -265,7 +173,7 @@
 				<li class="ablum_item"><img src="../assets/img/headImg.jpg"></li>
 				<li class="ablum_item"><img src="../assets/img/headImg.jpg"></li>
 				<li class="ablum_item"><img src="../assets/img/headImg.jpg"></li>
-				<li class="ablum_item"><img src="../assets/img/headImg.jpg"></li>
+				<li class="addImg"><img src="../assets/img/add_img.png"></li>
 			</ul>
 		</div>
 		<div class="profile_classify">

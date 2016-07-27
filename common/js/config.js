@@ -5,14 +5,12 @@ seajs.config({
     },
 
     alias: {
-        // 'jquery': 'common/js/jquery.min.js',
-        'jquery': '../common/js/jquery.min.js'
-        // 'tools': '../common/tools',
-        // // 'doT': '../lib/doT',
-        // 'showBigPic': '../components/showBigPic',
-        // 'wxShare': '../components/wxShare',
-        // 'share': '../components/share',
-        // 'nativeShare': '../components/nativeShare',
+        'jquery': 'common/js/lib/jquery.min.js',
+        'ajax': 'common/js/ajax/ajax',
+        // 'jquery': '../common/js/lib/jquery.min.js',
+        'doT': 'common/js/lib/doT',
+        'tools': 'common/js/tools',
+        'albumBig': 'common/components/album_big',
     },
 
     preload: ['jquery']

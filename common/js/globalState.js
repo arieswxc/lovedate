@@ -1,9 +1,8 @@
 /* 
 * @Author: wangxiaochen
-* @Date:   2016-04-28
+* @Date:   2016-07-28
 */
 define(function(require,exports,module) {
-	var LS = localStorage;
 	var globalState = LS.globalState ? JSON.parse(LS.globalState) : {
 		footerIndex : 0
 	}

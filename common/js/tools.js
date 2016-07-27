@@ -9,7 +9,7 @@ define(function(require,exports,module) {
         var loadingDom = [
             '<div class="loadingBox" style="position: fixed;width: 100%;height: 100%; background:#efefef;opacity:0.8;left:0;top:0;z-index:1000;">',
                 '<div class="loadingImg" style="margin: auto;width: 50px;height: 50px;position: absolute;left: 0;right: 0;bottom: 0;top: 0;">',
-                    '<img src="../img/loading.gif" style="width:100%;height:100%;">',
+                    '<img src="../../assets/img/loading.gif" style="width:100%;height:100%;">',
                 '</div>',
             '</div>'
         ].join('');
@@ -33,7 +33,8 @@ define(function(require,exports,module) {
         else{
             url = url.split("?").join("!");
             url = url.split("&").join("@");
-            url = "../../url.jsp?url=" + url;
+            console.log(url);
+            url = "/lovedate/url.jsp?url=" + url;
         }
         var loading = json.loading;
         if(loading) {

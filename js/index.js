@@ -3,8 +3,12 @@
 * @Date:   2016-04-28
 */
 define(function(require,exports,module) {
-	var indexProfile = require('./index_profile.js')
+	var indexFate = require('./index/index_fate.js')
+	var indexProfile = require('./index/index_profile.js');
+	var indexMessage = require('./index/index_message.js');
+	var indexNearby = require('./index/index_nearby.js');
 	var globalState = require('../common/js/globalState');
+
 	//底部菜单
 	var footer = {
 		footerIndex: 0,
@@ -12,6 +16,20 @@ define(function(require,exports,module) {
 			this.footerIndex = value;
 			if(isGlobalTrue){
 				globalState.setFooterIndex(value);
+			}
+			switch(value) {
+				case 0://缘分
+					indexFate.init()
+					break;
+				case 1: //私信
+					indexMessage.init();
+					break;
+				case 2: //附近
+					indexNearby.init();
+					break;
+				case 3: //我
+					indexProfile.init();
+					break
 			}
 			[0,1,2,3].forEach(function(i,v) {
 				if(value == i) {
@@ -22,13 +40,11 @@ define(function(require,exports,module) {
 					$('.footer_btn').eq(i).find('img').attr('src','../assets/img/footer_img_grey_' + i + '.png');
 				}
 			});
-
 		},
 		view: $('.footer'),
-		
 		init: function() {
 			var self = this;
-			console.log(globalState);
+			// console.log(globalState);
 			self.setFooterIndex(globalState.footerIndex, true);
 
 			self.view.find('.footer_btn').click(function(e) {
@@ -36,11 +52,10 @@ define(function(require,exports,module) {
 			});
 		}
 	};
-	function initPage(){
-		footer.init();
-	}
 
-	initPage();
+
+
+	footer.init();
 	
 
 	
