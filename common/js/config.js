@@ -11,6 +11,7 @@ seajs.config({
         'doT': 'common/js/lib/doT',
         'tools': 'common/js/tools',
         'albumBig': 'common/components/album_big',
+        'select': '../../common/components/select'
     },
 
     preload: ['jquery']

@@ -3,10 +3,11 @@
 * @Date:   2016-07-28
 */
 define(function(require,exports,module) {
-	var albumBig = require('albumBig');
-	var doT = require('doT');
-	var ajax = require('ajax');
-
+	// var albumBig = require('albumBig');
+	// var doT = require('doT');
+	// var ajax = require('ajax');
+	var select = require('select');
+	select.selectPI();
 	function getCondition() {
 		ajax.ajax({
 			url: '/lp-bus-msc/f_110_10_1.service',
@@ -47,6 +48,6 @@ define(function(require,exports,module) {
 			}
 		});
 	}
-	getCondition();
-	setCondition();
+	// getCondition();
+	// setCondition();
 });

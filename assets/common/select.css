@@ -55,7 +55,9 @@
 	-moz-box-sizing:border-box; /* Firefox */
 	-webkit-box-sizing:border-box; /* Safari */
 } 
-
+.select_box .select_confirm span, .select_box .select_cancel span{
+	display: inline-block;
+}
 .select_box .select_items{
 	height: 5.6rem;
 	width: 49.9%;
