@@ -1,0 +1,89 @@
+.select_bg{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	opacity: .5;
+	font-size: 0;
+}
+.select_box{
+	font-size: 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-image: url('../../assets/img/select_bg.png');
+	color: #ffffff;
+	width: 100%;
+	height: 6.48rem;
+}
+.select_box .select_title_box{
+	height: .88rem;
+	line-height: .88rem;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.select_box .select_cancel{
+	font-size: .28rem;
+	display: inline-block;
+	width: 33%;
+	text-align: left;
+	padding-left: .1rem;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.select_box .select_title{
+	font-size: .36rem;
+	display: inline-block;
+	width: 33.9%;
+	text-align: center;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+} 
+.select_box .select_confirm{
+	font-size: .28rem;
+	display: inline-block;
+	width: 33%;
+	text-align: right;
+	padding-right: .1rem;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+} 
+
+.select_box .select_items{
+	height: 5.6rem;
+	width: 49.9%;
+	overflow-y: auto;
+	float: left;
+}
+.select_box .select_item{
+	font-size: .32rem;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	border-bottom: 1px solid rgba(255,255,255,0.06);
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.select_box .selected_item{
+	/*border-top: 1px solid rgba(255,255,255,0.5);*/
+	/*border-bottom: 1px solid rgba(255,255,255,0.5);*/
+}
+.select_box .selected_flag {
+	position: absolute;
+	top: 3.28rem;
+	width: 100%;
+	height: .8rem;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	border-top: 1px solid rgba(255,255,255,0.5);
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+}

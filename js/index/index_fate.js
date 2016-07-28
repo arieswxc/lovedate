@@ -38,8 +38,6 @@ define(function(require,exports,module) {
 			type: 'post',
 			loading: true,
 			data: {
-				p1: LS.getItem('sessionId'),
-				p2: LS.getItem('userId'),
 				a69: LS.getItem('sex'),
 				// a95: 10,
 				// a9: '',

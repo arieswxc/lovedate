@@ -7,6 +7,7 @@
 	<script src="../../common/js/sea.min.js"></script>
 	<script src="../../common/js/config.js"></script>
 	<script src="../../common/js/global.js"></script>
+	<script src="../../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/profileloveme.css">
 </head>
 <body>
@@ -14,7 +15,7 @@
 		<img src="../../assets/img/back.png">
 	</div>
 	<ul class="person_lists" style="display:none">
-		<li class="person_item">
+		<!-- <li class="person_item">
 			<div class="box">
 				<img class="head_img" src="../../assets/img/headImg.jpg">
 				<div class="content">
@@ -35,25 +36,32 @@
 				<img class="right" src="../../assets/img/right.png">
 			</div>
 			<div class="border"></div>
-		</li>
+		</li> -->
+	</ul>
+	<script type="text/x-dot-template" id="person_item">
 		<li class="person_item">
 			<div class="box">
-				<img class="head_img" src="../../assets/img/headImg.jpg">
+				<img class="head_img" src="{{=it.photoUrl}}">
 				<div class="content">
-					<div class="name">长安不问</div>
-					<div class="info">27岁 | 156cm | 浙江 杭州</div>
+					{{? it.isVip=='1'}}
+					<div class="name name_huangguan"><span>{{=it.name}}</span><img src="../../assets/img/huangguan.png"></div>
+					{{??}}
+					<div class="name"><span>{{=it.name}}</span></div>
+					{{?}}
+					<div class="info">{{=it.age}}岁 | {{=it.height}}cm | {{=it.province}} {{=it.city}}</div>
 				</div>
 				<img class="right" src="../../assets/img/right.png">
 			</div>
 			<div class="border"></div>
 		</li>
-	</ul>
-	<div class="no_loveme">
+	</script>
+
+	<div class="no_loveme" style="display:none">
 		<img src="../../assets/img/no_loveme.png">
 		<div class="to_btn">现在去</div>
 	</div>
 </body>
 <script type="text/javascript">
-    seajs.use('../../js/profileloveme.js');
+    seajs.use('../../js/profile/profileloveme.js');
 </script>
 </html>

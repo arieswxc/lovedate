@@ -7,6 +7,7 @@
 	<script src="../../common/js/sea.min.js"></script>
 	<script src="../../common/js/config.js"></script>
 	<script src="../../common/js/global.js"></script>
+	<script src="../../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/profilefriendcondition.css">
 </head>
 <body>
@@ -63,8 +64,42 @@
 			<div class="border"></div>
 		</li>
 	</ul>
+
+	<div class="select_bg"></div>
+	<div class="select_box">
+		<div class="select_title_box">
+			<div class="select_cancel"><span>取消</span></div>
+			<div class="select_title">年龄范围</div>
+			<div class="select_confirm"><span>完成</span></div>
+		</div>
+		<ul class="select_items">
+			<li class="select_item">18-20</li>
+			<li class="select_item">21-25</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item selected_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+		</ul>
+		<ul class="select_items">
+			<li class="select_item">18-20</li>
+			<li class="select_item">21-25</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item selected_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+			<li class="select_item">18-20</li>
+		</ul>
+		<div class="selected_flag"></div>
+	</div>
 </body>
 <script type="text/javascript">
-    seajs.use('../../js/profilefriendcondition.js');
+    seajs.use('../../js/profile/profilefriendcondition.js');
 </script>
 </html>

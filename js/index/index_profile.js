@@ -8,16 +8,20 @@ define(function(require,exports,module) {
 	var ajax = require('ajax');
 	function getProfileInfo() {
 		ajax.ajax({
-			url: '/lp-bus-msc/f_108_10_1.service',
+			url: '/lp-bus-msc/f_108_13_1.service',
 			type: 'post',
 			loading: true,
 			data: {
 				p1: LS.getItem('sessionId'),
 				p2: LS.getItem('userId'),
+				// a40: '',
+				// a38: '',
+				// a69: '',
+				// a9: ''
 			},
 			callback: function(res) {
 				var result = res.body;
-				$('.page_profile .name').text(result.b52);
+				$('.profile_header .name').text(result.b52);
 				var nameStatus;
 				if(result.b75 == 1) {
 					nameStatus = '通过';
@@ -26,8 +30,8 @@ define(function(require,exports,module) {
 				} else {
 					nameStatus = '未通过';
 				}
-				$('.page_profile .status').text(nameStatus);
-				$('.page_profile .head_img').attr('src',result.b57);
+				$('.profile_header .status').text(nameStatus);
+				$('.profile_header .head_img').attr('src',result.b57);
 				// $('.page_profile name').text();
 				console.log(res);
 			},

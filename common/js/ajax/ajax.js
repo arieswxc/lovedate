@@ -29,6 +29,8 @@ define(function(require,exports,module) {
             loadingRemain(true);
         }
         $.extend(data, {
+            p1: LS.getItem('sessionId'),
+            p2: LS.getItem('userId'),
             m4: 'test',
             m5: '100',
             m6: '1.0.0',

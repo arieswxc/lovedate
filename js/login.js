@@ -38,7 +38,7 @@ define(function(require,exports,module) {
 				LS.setItem('userId', res.body.b80);
 				LS.setItem('sessionId', res.body.b101);
 				LS.setItem('sex', res.body.b69);
-				// location.href = './index.html';
+				location.href = './index.html';
 			}
 			// console.log(err.responseText);
 			// console.log(transResult(err.responseText));

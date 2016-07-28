@@ -7,6 +7,7 @@
 	<script src="../../common/js/sea.min.js"></script>
 	<script src="../../common/js/config.js"></script>
 	<script src="../../common/js/global.js"></script>
+	<script src="../../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/profilevisiter.css">
 </head>
 <body>
@@ -14,7 +15,7 @@
 		<img src="../../assets/img/back.png">
 	</div>
 	<ul class="person_lists" style="display:none;">
-		<li class="person_item">
+		<!-- <li class="person_item">
 			<div class="box">
 				<img class="head_img" src="../../assets/img/headImg.jpg">
 				<div class="content">
@@ -37,12 +38,30 @@
 				<img class="right" src="../../assets/img/right.png">
 			</div>
 			<div class="border"></div>
-		</li>
+		</li> -->
 	</ul>
-	<div class="no_permission">
+	<script type="text/x-dot-template" id="person_item">
+    	<li class="person_item">
+			<div class="box">
+				<img class="head_img" src="{{=it.photoUrl}}">
+				<div class="content">
+					{{? it.isVip=='1'}}
+					<div class="name name_huangguan"><span>{{=it.name}}</span><img src="../../assets/img/huangguan.png"></div>
+					{{??}}
+					<div class="name"><span>{{=it.name}}</span></div>
+					{{?}}
+					<div class="info">{{=it.age}}岁 | {{=it.height}}cm | {{=it.province}} {{=it.city}}</div>
+					<div class="time">到访时间：<span>{{=it.visitiTime}}</span></div>
+				</div>
+				<img class="right" src="../../assets/img/right.png">
+			</div>
+			<div class="border"></div>
+		</li>
+    </script>
+	<div class="no_permission" style="display:none">
 		<img src="../../assets/img/visiter_logo.png">
-		<div class="name_hint">Hi,<span>李梅</span></div>
-		<div class="visiter_hint">最近<span class="recent_days">30</span>天，有<span class="recent_visiter">22</span>人来看过你</div>
+		<div class="name_hint">Hi,<span class="self_name">李梅</span></div>
+		<div class="visiter_hint">最近<span class="recent_days">30</span>天，有<span class="recent_visiter"></span>人来看过你</div>
 		<div class="vip_box">
 			<div class="border_left"></div>
 			<div class="vip_sign">VIP</div>
@@ -54,6 +73,6 @@
 	</div>
 </body>
 <script type="text/javascript">
-    seajs.use('../../js/profilevisiter.js');
+    seajs.use('../../js/profile/profilevisiter.js');
 </script>
 </html>

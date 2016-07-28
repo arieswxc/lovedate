@@ -1,4 +1,5 @@
 @import url('../common/global.css');
+@import url('../common/select.css');
 .condition_lists{
 	font-size: 0;
 	list-style: none;

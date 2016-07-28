@@ -86,6 +86,8 @@
 }
 .recent_visiter{
 	color:#e43f3f;
+	width: .4rem;
+	display: inline-block;
 }
 .vip_box{
 	width: 5.7rem;
