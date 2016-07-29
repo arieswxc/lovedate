@@ -16,7 +16,7 @@
 			<!-- <li><img src="../assets/img/headImg.jpg"></li> -->
 		</ul>
 		<script type="text/x-dot-template" id="fate_header_item">
-			<li><img src="{{=it.photo_url}}"></li>
+			<li><img src="{{=it.photo_url}}" data-id={{=it.userId}}></li>
 		</script>
 
 		<div class="fate_ad">
@@ -46,7 +46,7 @@
 		</ul>
 		<script type="text/x-dot-template" id="fate_person_item">
 	       <li class="person_item">
-				<div class="person_box">
+				<div class="person_box" data-id={{=it.userId}}>
 					<img class="head_img" src="{{=it.photoUrl}}">
 					<div class="content">
 						<div class="name">{{=it.name}}</div>

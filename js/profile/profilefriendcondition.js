@@ -7,7 +7,27 @@ define(function(require,exports,module) {
 	// var doT = require('doT');
 	// var ajax = require('ajax');
 	var select = require('select');
-	select.selectPI();
+	
+
+	$('.condition_item .height').click(function() {
+		var self = this;
+		select.selectPI({
+			title: '身高',
+			selectOptions: [
+				'140-150',
+				'150-160',
+				'160-170',
+				'170-175',
+				'175-180',
+				'180-185',
+				'185-190',
+				'190-200'
+			],
+			confirmCallback: function(data) {
+				$(self).text(data);
+			}
+		});
+	});
 	function getCondition() {
 		ajax.ajax({
 			url: '/lp-bus-msc/f_110_10_1.service',

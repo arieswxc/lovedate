@@ -11,4 +11,10 @@ define(function(require,exports,module) {
 		globalState.footerIndex = value;
 		LS.globalState = JSON.stringify(globalState);
 	}
+
+	exports.personId = globalState.personId;
+	exports.setPersonId = function(id) {
+		globalState.personId = id;
+		LS.globalState = JSON.stringify(globalState);
+	}
 });

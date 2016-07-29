@@ -60,7 +60,8 @@
 }
 .select_box .select_items{
 	height: 5.6rem;
-	width: 49.9%;
+	/*width: 49.9%;*/
+	width: 100%;
 	overflow-y: auto;
 	float: left;
 }
