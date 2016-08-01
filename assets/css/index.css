@@ -481,6 +481,21 @@
 	font-size: 0.24rem;
 	margin-top: 0.26rem;
 	color: #aaaaaa;
+	display: none;
+}
+.profile_classify .value{
+	font-size: 0.24rem;
+	margin-top: 0.26rem;
+	color: #aaaaaa;
+}
+.profile_classify .open_vip,.profile_classify .to_auth{
+	font-size: 0.24rem;
+	margin-top: 0.26rem;
+	color: #e43f3f;
+	display: none;
+}
+.profile_classify .classify_item.phone .value{
+	display: none;
 }
 .profile_classify .name2{
 	margin-top: 0.25rem;

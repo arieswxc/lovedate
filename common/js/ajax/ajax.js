@@ -28,9 +28,14 @@ define(function(require,exports,module) {
         if(loading) {
             loadingRemain(true);
         }
+        if(json.personId) {
+            userId = json.personId;
+        } else {
+            userId = LS.getItem('userId');
+        }
         $.extend(data, {
             p1: LS.getItem('sessionId'),
-            p2: LS.getItem('userId'),
+            p2: userId,
             m4: 'test',
             m5: '100',
             m6: '1.0.0',

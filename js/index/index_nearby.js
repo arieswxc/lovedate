@@ -5,6 +5,7 @@
 define(function(require,exports,module) {
 	var doT = require('doT');
 	var ajax = require('ajax');
+	var globalState = require('globalState');
 	function initNearByPerson(personList) {
 		// console.log(personList);
 		var template = doT.template($('#nearby_person_item').html());
@@ -12,6 +13,7 @@ define(function(require,exports,module) {
 		$.each(personList, function(i,v) {
 			personListDom += template({
 				photoUrl: v.b57,
+				userId: v.b80,
 				name: v.b52 || '未知',
 				age: v.b1 || '未知',
 				height: v.b33 || '未知',
@@ -20,6 +22,17 @@ define(function(require,exports,module) {
 		});
 		$('.nearby_person_list').html(personListDom);
 	}
+
+	(function event() {
+		$('.nearby_person_list').on('click','.person_item .head_img', function(e) {
+			var userId = $(this).closest('.person_item').attr('data-id');
+			globalState.setPersonId(userId);
+			location.href = './personhome.html';
+		});
+		$('.nearby_greet_btn').click(function(e) {//一键打招呼
+			console.log('一键打招呼')
+		});
+	})();
 
 	exports.init = function() {
 		ajax.ajax({

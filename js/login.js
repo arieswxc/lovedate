@@ -20,10 +20,6 @@ define(function(require,exports,module) {
 	// 	"EZ/Es5OiyAtdPhBNQCNlZJhPjs+n26G2L+xm2aEAQL+uJyM5";
 	// var teststr = "o4XIbS+lgJaqRCSXrxiERxnto0X/ui8gP5FBBJFdxx1YRciOMHEfGf6wmJWGcAXOR8Pu2koUetb60V3fKUtReQ==";
 
-	// console.log(transResult(teststr))
-
-
-
 	ajax.ajax({
 		url: '/lp-author-msc/f_120_10_1.service',
 		type: 'post',
@@ -40,9 +36,6 @@ define(function(require,exports,module) {
 				LS.setItem('sex', res.body.b69);
 				location.href = './index.html';
 			}
-			// console.log(err.responseText);
-			// console.log(transResult(err.responseText));
-			// console.log(transResult(err));
 		},
 		
 	})

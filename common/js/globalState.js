@@ -17,4 +17,5 @@ define(function(require,exports,module) {
 		globalState.personId = id;
 		LS.globalState = JSON.stringify(globalState);
 	}
+
 });

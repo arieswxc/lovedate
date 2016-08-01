@@ -3,11 +3,11 @@
 * @Date:   2016-07-28
 */
 define(function(require,exports,module) {
-	// var albumBig = require('albumBig');
-	// var doT = require('doT');
-	// var ajax = require('ajax');
+	var albumBig = require('albumBig');
+	var doT = require('doT');
+	var ajax = require('ajax');
 	var select = require('select');
-	
+	// console.log(JSON.parse(LS.getItem('profile')))
 
 	$('.condition_item .height').click(function() {
 		var self = this;
@@ -68,6 +68,6 @@ define(function(require,exports,module) {
 			}
 		});
 	}
-	// getCondition();
+	getCondition();
 	// setCondition();
 });

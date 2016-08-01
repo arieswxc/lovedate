@@ -4,29 +4,30 @@
 	<title>性别</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+	<script src="../../common/js/global.js"></script>
 	<script src="../../common/js/sea.min.js"></script>
 	<script src="../../common/js/config.js"></script>
-	<script src="../../common/js/global.js"></script>
+	<script src="../../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/profileinfo.css">
 </head>
 <body>
 	<div class="header_back">
 		<img src="../../assets/img/back.png">
 	</div>
-	<div class="checkbox">
+	<div class="checkbox boy">
 		<img class="sex_img" src="../../assets/img/man.png">
 		<div class="sex_text">我是男生</div>
-		<img class="check_img" src="../../assets/img/check_yes.png">
+		<img class="check_img" data-sex="1" src="../../assets/img/check_no.png">
 	</div>
-	<div class="checkbox">
+	<div class="checkbox girl">
 		<img class="sex_img" src="../../assets/img/woman.png">
 		<div class="sex_text">我是女生</div>
-		<img class="check_img" src="../../assets/img/check_no.png">
+		<img class="check_img" data-sex="2" src="../../assets/img/check_no.png">
 	</div>
 	<div class="sex_notice">重要提示：性别选中后不能再次修改，务必保证真实</div>
 	<div class="sex_confirm">确定</div>
 </body>
 <script type="text/javascript">
-    seajs.use('../../js/profileinfo.js');
+    seajs.use('../../js/profile/profileinfo_sex.js');
 </script>
 </html>

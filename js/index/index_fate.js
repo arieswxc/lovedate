@@ -5,7 +5,7 @@
 define(function(require,exports,module) {
 	var doT = require('doT');
 	var ajax = require('ajax');
-	var globalState = require('../common/js/globalState');
+	var globalState = require('globalState');
 
 	function initBanner(imgList) {
 		var template = doT.template($('#fate_header_item').html());
@@ -49,6 +49,35 @@ define(function(require,exports,module) {
 			console.log(userId);
 			globalState.setPersonId(userId);
 			location.href = './personhome.html';
+		}).on('click','li.person_item .love_btn',function(e) { //关注好友
+			var self = $(this);
+			var userId = self.closest('.person_item').find('.person_box').attr('data-id');
+			if(self.find('span').text() == '喜欢') {
+				var url = '/lp-bus-msc/f_105_10_2.service';
+				var btnType = 'add';
+			} else {
+				var url = '/lp-bus-msc/f_105_12_3.service';
+				var btnType = 'delete';
+			}
+			ajax.ajax({
+				url: url,
+				type: 'post',
+				loading: true,
+				data: {
+					a77: userId	
+				},
+				callback: function(res) {
+					console.log(res);
+					if(btnType == 'add') {
+						self.find('span').text('已喜欢');
+					} else {
+						self.find('span').text('喜欢');
+					}
+				},
+				err: function(err){
+					console.log(err);
+				}
+			});
 		});
 	})();
 
@@ -67,7 +96,7 @@ define(function(require,exports,module) {
 				// a117: ''
 			},
 			callback: function(res) {
-				console.log(res);
+				// console.log(res);
 				initBanner(res.body.b179);
 				initPerson(res.body.b180);
 			},

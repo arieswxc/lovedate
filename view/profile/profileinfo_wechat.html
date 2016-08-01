@@ -4,9 +4,10 @@
 	<title>微信</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+	<script src="../../common/js/global.js"></script>
 	<script src="../../common/js/sea.min.js"></script>
 	<script src="../../common/js/config.js"></script>
-	<script src="../../common/js/global.js"></script>
+	<script src="../../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/profileinfo.css">
 </head>
 <body>
@@ -17,7 +18,7 @@
 
 	<div class="content">
 		<div class="qq_box">
-			<input class="wechatinput" type="number" name="phone" placeholder="输入微信号，他人更容易找到你哦">
+			<input class="wechatinput" type="text" name="phone" placeholder="输入微信号，他人更容易找到你哦">
 			<div class="qq_hint">微信号:</div>
 		</div>
 
@@ -32,6 +33,6 @@
 	</div>
 </body>
 <script type="text/javascript">
-    seajs.use('../../js/profileinfo.js');
+    seajs.use('../../js/profile/profileinfo_wechat.js');
 </script>
 </html>

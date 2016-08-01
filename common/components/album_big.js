@@ -13,11 +13,26 @@ define(function(require,exports,module) {
         isNeedBack = true;
         var screenWidth =window.screen.width;//屏宽
         var screenHeight =window.screen.height;//屏高
+
+        var bigPicBgDom = $('<div class="bigPicBg"></div>')
+        var bigPicBgDomStyle = [
+            'width: 100%;',
+            'height: 100%;',
+            'background: #000000;',
+            'position: fixed;',
+            'z-index: 1;',
+            'left: 0;',
+            'top: 0;',
+            'overflow: hidden;',
+            'font-size:0;',
+            'opacity:0.5;'
+        ];
+        bigPicBgDom.attr('style', bigPicBgDomStyle.join(''));
+
         var bigPicBoxDom = $('<div class="bigPicBox"></div>'); //最外层盒子
         var bigPicBoxDomStyle = [
             'width: 100%;',
             'height: 100%;',
-            'background: #000000;',
             'position: fixed;',
             'z-index: 3333;',
             'left: 0;',
@@ -95,7 +110,7 @@ define(function(require,exports,module) {
                 ]
             }
           
-            console.log(screenHeight);
+            // console.log(screenHeight);
             
             picItemDom.attr('style',picItemDomStyle.join(''));
             bigPicUl.append(picItemDom);
@@ -107,6 +122,7 @@ define(function(require,exports,module) {
         }
         bigPicBoxDom.append(bigPicClose);
         bigPicBoxDom.append(bigPicUl)
+        $('body').append(bigPicBgDom); 
         $('body').append(bigPicBoxDom); 
 
         var events = function() {
@@ -142,11 +158,13 @@ define(function(require,exports,module) {
             }).on('click','.bigPicItem',function(e) {
                 isNeedBack = false;
                 e.preventDefault();
+                $('.bigPicBg').remove();
                 $(this).closest('.bigPicBox').remove();
                 history.back();
             }).on('click','.closeBtn',function(e) {
                 isNeedBack = false;
                 e.preventDefault();
+                $('.bigPicBg').remove();
                 $(this).closest('.bigPicBox').remove();
                 history.back();
             });
@@ -154,6 +172,7 @@ define(function(require,exports,module) {
             window.onpopstate = function() {
                 if(isNeedBack) {
                     // history.back();
+                    $('.bigPicBg').remove();
                     $('.bigPicBox').remove();
                 }
             };

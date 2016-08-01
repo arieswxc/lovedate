@@ -6,6 +6,8 @@
         html.style.fontSize = windowWidth / 7.5 + 'px';
         // 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px';
     }, false);
+
+    
 }();
 
 var LS = localStorage;

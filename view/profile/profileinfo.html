@@ -4,137 +4,140 @@
 	<title>我的资料</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+	<script src="../../common/js/global.js"></script>
 	<script src="../../common/js/sea.min.js"></script>
 	<script src="../../common/js/config.js"></script>
-	<script src="../../common/js/global.js"></script>
+	<script src="../../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/profileinfo.css">
 </head>
 <body>
 	<div class="header_back">
 		<img src="../../assets/img/back.png">
 	</div>
-	<ul class="classify_lists">
-		<li class="classify_item">
-			<ul class="info_lists">
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">昵称</div>
-						<div class="value nickname">信马由缰</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">性别</div>
-						<div class="value sex">男</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="motto">这场仗打完，我就回老家结婚</div>
-				</li>
-			</ul>
-		</li>
-		<li class="classify_item">
-			<ul class="info_lists">
-				<li class="info_title">
-					<div>联系方式</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">QQ</div>
-						<div class="value qq">未设置</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">微信</div>
-						<div class="value wechat">未设置</div>
-					</div>
-				</li>
-			</ul>
-		</li>
-		<li class="classify_item">
-			<ul class="info_lists">
-				<li class="info_title">
-					<div>详细资料</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">年龄</div>
-						<div class="value">24岁</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">居住地</div>
-						<div class="value">未设置</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">身高</div>
-						<div class="value">未设置</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">体重</div>
-						<div class="value">未设置</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">学历</div>
-						<div class="value">未设置</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">职业</div>
-						<div class="value">未设置</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">月收入</div>
-						<div class="value">未设置</div>
-					</div>
-				</li>
-			</ul>
-		</li>
-		<li class="classify_item">
-			<ul class="info_lists">
-				<li class="info_title">
-					<div>秘密信息</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">交友目的</div>
-						<div class="value">约会</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">恋爱观</div>
-						<div class="value">顺其自然</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">首次见面希望</div>
-						<div class="value">喝喝茶</div>
-					</div>
-				</li>
-				<li class="info_item">
-					<div class="overflow_hidden">
-						<div class="title">喜欢爱爱的地点</div>
-						<div class="value">会所</div>
-					</div>
-				</li>
-			</ul>
-		</li>
-	</ul>
+	<script type="text/x-dot-template" id="profile_info">
+		<ul class="classify_lists">
+			<li class="classify_item">
+				<ul class="info_lists">
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">昵称</div>
+							<div class="value nickname">{{=it.b52}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">性别</div>
+							<div class="value sex">{{=(it.b69==1)?'男':'女'}}</div>
+						</div>
+					</li>
+					<li class="info_item motto">
+						<div class="motto_value">{{=it.b17}}</div>
+					</li>
+				</ul>
+			</li>
+			<li class="classify_item">
+				<ul class="info_lists">
+					<li class="info_title">
+						<div>联系方式</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">QQ</div>
+							<div class="value qq">{{=(it.b156)?it.b156:'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">微信</div>
+							<div class="value wechat">{{=(it.b157)?it.b157:'未设置'}}</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="classify_item">
+				<ul class="info_lists">
+					<li class="info_title">
+						<div>详细资料</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">年龄</div>
+							<div class="value age">{{=(it.b1)?(it.b1+'岁'):'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">居住地</div>
+							<div class="value">{{=(it.b67)?(it.b67 + '' + it.b9):'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">身高</div>
+							<div class="value">{{=(it.b33)?it.b33:'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">体重</div>
+							<div class="value">{{=(it.b88)?it.b88:'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">学历</div>
+							<div class="value">{{=(it.b19)?it.b19:'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">职业</div>
+							<div class="value">{{=(it.b62)?it.b62:'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">月收入</div>
+							<div class="value">{{=(it.b87)?(it.b87 + '-' + it.b86):'未设置'}}</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="classify_item">
+				<ul class="info_lists">
+					<li class="info_title">
+						<div>秘密信息</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">交友目的</div>
+							<div class="value">{{=(it.b194)?it.b194:'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">恋爱观</div>
+							<div class="value">{{=(it.b195)?it.b195:'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">首次见面希望</div>
+							<div class="value">{{=(it.b196)?it.b196:'未设置'}}</div>
+						</div>
+					</li>
+					<li class="info_item">
+						<div class="overflow_hidden">
+							<div class="title">喜欢爱爱的地点</div>
+							<div class="value">{{=(it.b197)?it.b197:'未设置'}}</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</script>
 </body>
 <script type="text/javascript">
-    seajs.use('../../js/profileinfo.js');
+    seajs.use('../../js/profile/profileinfo.js');
 </script>
 </html>

@@ -1,3 +1,4 @@
+@import url('../common/select.css');
 @import url('../common/global.css');
 .classify_lists{
 	list-style: none;
@@ -34,11 +35,15 @@
 	color: #ffffff;
 	float: right;
 	margin-right: .2rem;
-
+	min-width: 1rem;
+    text-align: right;
 }
 .motto{
 	font-size: .3rem;
-	color: #ffffff;
+    color: #ffffff;
+    line-height: .5rem;
+    height: auto;
+    padding: .29rem 0;
 }
 
 
@@ -162,6 +167,31 @@
 	display: block;
 }
 .nick_confirm{
+	font-size: .32rem;
+	color: #ffffff;
+	background: #e43f3f;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	width: 5.5rem;
+	border-radius: 2rem;
+	margin: auto;
+	margin-top: .8rem;
+}
+
+/*　profileinfo_motto　*/
+.motto_textarea{
+	font-size: .3rem;
+	width: 100%;
+	color: #ffffff;
+	height: 4rem;
+	line-height: .5rem;
+	background: #312837;
+	border:none;
+	text-indent: .3rem;
+	display: block;
+}
+.motto_confirm{
 	font-size: .32rem;
 	color: #ffffff;
 	background: #e43f3f;

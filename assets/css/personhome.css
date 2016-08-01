@@ -143,3 +143,9 @@ body{
 	margin-top: .08rem;
 	margin-right: .1rem;
 }
+.age_height_education span{
+	margin-right: .4rem;
+}
+.address .province{
+	margin-right: .4rem;
+}
