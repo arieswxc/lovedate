@@ -33,47 +33,84 @@ define(function(require,exports,module) {
         } else {
             userId = LS.getItem('userId');
         }
-        $.extend(data, {
-            p1: LS.getItem('sessionId'),
-            p2: userId,
-            m4: 'test',
-            m5: '100',
-            m6: '1.0.0',
-            m7: 3,
-            m11: 'wx',
-            m16: '',
-            m18: 'lovedate',
-        });
-        $.ajax({
-            type : type,
-            data : data,
-            url : url,
-            timeout: 30000,
-            cache:false,
-            dataType: "json", 
-            success : function(res, textStatus, jqXHR) {
-                // console.log(res);
-                loadingRemain(false);
-                if (res.status == 1) {
-                    if (json.suc && typeof json.suc === 'function') {
-                        json.suc(res);
+        
+        if(json.uploadFormat){
+            data.append("p2", LS.getItem('userId'));
+            data.append("p1", LS.getItem('sessionId'));
+            $.ajax({
+                type : type,
+                data : data,
+                url : url,
+                processData: false,  // 告诉jQuery不要去处理发送的数据
+                contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
+                timeout: 30000,
+                dataType: "json", 
+                success : function(res, textStatus, jqXHR) {
+                    // console.log(res);
+                    loadingRemain(false);
+                    if (res.status == 1) {
+                        if (json.suc && typeof json.suc === 'function') {
+                            json.suc(res);
+                        }
+                    } else {
+                        if(json.err && typeof json.err === 'function'){
+                            json.err(res.exceptionMessage);
+                        }
                     }
-                } else {
-                    if(json.err && typeof json.err === 'function'){
-                        json.err(res.exceptionMessage);
+                },
+                error : function(err){
+                    loadingRemain(false);
+                    var result = transResult(err.responseText);
+                    if(result.code==200) {
+                        json.callback(result);
+                    } else {
+                        json.err(result);
                     }
                 }
-            },
-            error : function(err){
-                loadingRemain(false);
-                var result = transResult(err.responseText);
-                if(result.code==200) {
-                    json.callback(result);
-                } else {
-                    json.err(result);
+            });
+        } else {
+            $.extend(data, {
+                p1: LS.getItem('sessionId'),
+                p2: userId,
+                m4: 'test',
+                m5: '100',
+                m6: '1.0.0',
+                m7: 3,
+                m11: 'wx',
+                // m16: '',
+                m18: 'lovedate',
+            });
+            $.ajax({
+                type : type,
+                data : data,
+                url : url,
+                timeout: 30000,
+                dataType: "json", 
+                success : function(res, textStatus, jqXHR) {
+                    // console.log(res);
+                    loadingRemain(false);
+                    if (res.status == 1) {
+                        if (json.suc && typeof json.suc === 'function') {
+                            json.suc(res);
+                        }
+                    } else {
+                        if(json.err && typeof json.err === 'function'){
+                            json.err(res.exceptionMessage);
+                        }
+                    }
+                },
+                error : function(err){
+                    loadingRemain(false);
+                    var result = transResult(err.responseText);
+                    if(result.code==200) {
+                        json.callback(result);
+                    } else {
+                        json.err(result);
+                    }
                 }
-            }
-        });
+            });
+        }
+        
     };
 
     // exports.loadingRemain = loadingRemain;

@@ -4,9 +4,10 @@
 	<title>相册</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
-	<script src="../../common/js/sea.min.js"></script>
-	<script src="../../common/js/config.js"></script>
 	<script src="../../common/js/global.js"></script>
+	<script src="../../common/js/sea.min.js"></script>
+	<script src="../../common/js/lib/seajs-text.js"></script>
+	<script src="../../common/js/config.js"></script>
 	<script src="../../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/profilealbum.css">
 </head>
@@ -17,10 +18,25 @@
 	
 	<div class="album">
 		<div class="img_box"><img class="add_btn" src="../../assets/img/add_img.png"></div>
-		<div class="img_box"><img src="../../assets/img/headImg.jpg"></div>
-		<div class="img_box"><img src="../../assets/img/headImg.jpg"><div class="check_status">审核中</div></div>
-		<div class="img_box"><img src="../../assets/img/headImg.jpg"><div class="check_status">审核未通过</div></div>
 	</div>
+	<script type="text/x-dot-template" id="album_item">
+		{{~it :value:index}}
+		<div class="img_box">
+			<img class="album_img" data-id={{=value.b34}} data-index={{=index}} src="{{=value.b60}}">
+			{{? value.b75==2}}
+			<div class="check_status">审核中</div>
+			{{?? value.b75==3}}
+			<div class="check_status">审核未通过</div>
+			{{??}}
+			{{?}}
+		</div>
+		{{~}}
+	</script>
+
+	<form id= "headuploadForm" method= "post" enctype ="multipart/form-data" style="display:none;">
+		<input type="file" class="file" name="a102"/>
+	</form>
+
 </body>
 <script type="text/javascript">
     seajs.use('../../js/profile/profilealbum.js');

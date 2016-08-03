@@ -6,6 +6,7 @@ define(function(require,exports,module) {
 	var doT = require('doT');
 	var ajax = require('ajax');
 	var albumBig = require('albumBig');
+	var tools = require('tools');
 	var globalState = require('../common/js/globalState');
    	(function init(personId){
    		getPersonInfo(personId);
@@ -25,16 +26,27 @@ define(function(require,exports,module) {
 				// a38: '',
 			},
 			callback: function(res) {
-				console.log(res);
+				// console.log(res);
 				var template = doT.template($('#person_into').html());
-				$('body').append(template(res.body));
+				var templateData = res.body;
+				// templateData.b112.b19 = tools.getEnumNameByCode('educationLevel', templateData.b19);//学历
+				// templateData.b112.b62 = tools.getEnumNameByCode('profession_personal', templateData.b62);//职业
+				// // templateData.b62 = tools.getEnumNameByCode('wage', templateData.b62);//月收入
+				templateData.b112.b194 = tools.getEnumNameByCode('dating_purpose', templateData.b112.b194);//交友目的
+				templateData.b112.b195 = tools.getEnumNameByCode('indulged', templateData.b112.b195);//恋爱观
+				templateData.b112.b196 = tools.getEnumNameByCode('meet_place', templateData.b112.b196);//首次见面希望
+				templateData.b112.b197 = tools.getEnumNameByCode('love_place', templateData.b112.b197);//爱爱的地点
+				if(templateData.b114){
+					templateData.b114.b19 = tools.getEnumNameByCode('educationLevel', templateData.b114.b19);//择友学历
+				}
+				console.log(templateData)
+				$('body').append(template(templateData));
 				var albums = [];
 				$.each(res.body.b113,function(i,v) {
-					// console.log(i + '  ' + v);
 					albums.push(v.b58);
 				});
 				// console.log(albums)
-   				lookAlbum(albums);
+   				events(personId,albums);
 			},
 			err: function(err){
 				console.log(err);
@@ -42,11 +54,43 @@ define(function(require,exports,module) {
    		})
    	}
 
-   	function lookAlbum(albums) {
+   	function events(personId,albums) {
    		$('.albums').on('click','img',function(e) {
    			var index = $(this).index();
    			albumBig.showBigPic(albums,index,false);
    		});
+
+   		$('body').on('click','.connect_btn.love',function(e) { //关注好友
+			var self = $(this);
+			if(self.find('span').text() == '喜欢') {
+				var url = '/lp-bus-msc/f_105_10_2.service';
+				var btnType = 'add';
+			} else {
+				var url = '/lp-bus-msc/f_105_12_3.service';
+				var btnType = 'delete';
+			}
+			ajax.ajax({
+				url: url,
+				type: 'post',
+				loading: true,
+				data: {
+					a77: personId	
+				},
+				callback: function(res) {
+					console.log(res);
+					if(btnType == 'add') {
+						self.find('span').text('已喜欢');
+					} else {
+						self.find('span').text('喜欢');
+					}
+				},
+				err: function(err){
+					console.log(err);
+				}
+			});
+		});
    	}
+
+  
 
 });

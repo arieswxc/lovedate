@@ -8,12 +8,16 @@
 	border-radius: .1rem;
 }
 .album .add_btn{
-	margin-left: .25rem;
 }
 .album .img_box{
 	float: left;
 	margin-right: .2rem;
 	position: relative;
+	margin-bottom: .2rem;
+}
+.album .img_box:nth-child(4n+1){
+	margin-left: .25rem;
+
 }
 .album .check_status{
 	font-size: .24rem;

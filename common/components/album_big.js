@@ -4,8 +4,9 @@
 */
 define(function(require,exports,module) {
     //全屏查看图片插件
-    exports.showBigPic = function(data, picIndex, isBigBooeal) {
+    exports.showBigPic = function(data, picIndex, isBigBooeal, deleteCallback) {
         // history.pushState(null,null,'detail.html');
+        var delIndex;
         var isNeedBack = false;
         var thisUrl = window.location.href;
         // console.log(thisUrl);
@@ -14,7 +15,8 @@ define(function(require,exports,module) {
         var screenWidth =window.screen.width;//屏宽
         var screenHeight =window.screen.height;//屏高
 
-        var bigPicBgDom = $('<div class="bigPicBg"></div>')
+        var bigPicBgDom = $('<div class="bigPicBg"></div>');
+        var bgOpacity = isBigBooeal?'1':'0.5';
         var bigPicBgDomStyle = [
             'width: 100%;',
             'height: 100%;',
@@ -25,7 +27,7 @@ define(function(require,exports,module) {
             'top: 0;',
             'overflow: hidden;',
             'font-size:0;',
-            'opacity:0.5;'
+            'opacity:' + bgOpacity + ';'
         ];
         bigPicBgDom.attr('style', bigPicBgDomStyle.join(''));
 
@@ -166,6 +168,16 @@ define(function(require,exports,module) {
                 e.preventDefault();
                 $('.bigPicBg').remove();
                 $(this).closest('.bigPicBox').remove();
+                history.back();
+            }).on('click','.delBtn',function(e) {
+                var returnIndex = $('.bigPicCounter').text().split('/')[0] - 1;
+                isNeedBack = false;
+                e.preventDefault();
+                $('.bigPicBg').remove();
+                $(this).closest('.bigPicBox').remove();
+                if(deleteCallback) {
+                    deleteCallback(returnIndex);
+                }
                 history.back();
             });
 

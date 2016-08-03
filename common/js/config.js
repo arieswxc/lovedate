@@ -13,7 +13,8 @@ seajs.config({
         'tools': 'common/js/tools',
         'globalState': 'common/js/globalState',
         'albumBig': 'common/components/album_big',
-        'select': 'common/components/select'
+        'select': 'common/components/select',
+        // 'enum': 'common/json/enum.json'
     },
 
     preload: ['jquery']

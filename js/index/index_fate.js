@@ -87,7 +87,7 @@ define(function(require,exports,module) {
 			type: 'post',
 			loading: true,
 			data: {
-				a69: LS.getItem('sex'),
+				// a69: LS.getItem('sex'),
 				// a95: 10,
 				// a9: '',
 				// a67: '',

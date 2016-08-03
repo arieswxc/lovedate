@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
 	<script src="../common/js/global.js"></script>
 	<script src="../common/js/sea.min.js"></script>
+	<script src="../common/js/lib/seajs-text.js"></script>
 	<script src="../common/js/config.js"></script>
 	<script src="../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../assets/css/personhome.css">
@@ -20,7 +21,7 @@
 			<img class="head_img" src="{{=it.b112.b57}}">
 			<div class="head_info">
 				<div class="name">{{=it.b112.b52}}</div>
-				<div class="age_height_education"><span class="age">{{=it.b112.b1}}岁</span><span class="height">{{=it.b112.b33}}cm</span><span class="education">{{=it.b112.b19}}</span></div>
+				<div class="age_height_education"><span class="age">{{=it.b112.b1?it.b112.b1:'0'}}岁</span><span class="height">{{=it.b112.b33?it.b112.b33:'0'}}cm</span><span class="education">{{=it.b112.b19?it.b112.b19:'小学'}}</span></div>
 				<div class="address"><span class="province">{{=it.b112.b67}}</span><span class="city">{{=it.b112.b9}}</span></div>
 			</div>
 		</div>
@@ -128,7 +129,7 @@
 					<li class="detail_item">
 						<img src="../assets/img/info_age.png">
 						<div class="key">年龄</div>
-						<div  class="value">{{=it.b112.b1}}岁</div>
+						<div  class="value">{{=it.b112.b1?it.b112.b1:'0'}}岁</div>
 					</li>
 					<li class="detail_item">
 						<img src="../assets/img/info_address.png">
@@ -138,12 +139,12 @@
 					<li class="detail_item">
 						<img src="../assets/img/info_weight.png">
 						<div class="key">体重</div>
-						<div class="value">{{=it.b112.b88}}kg</div>
+						<div class="value">{{=it.b112.b88?it.b112.b88:'0'}}kg</div>
 					</li>
 					<li class="detail_item">
 						<img src="../assets/img/info_job.png">
 						<div class="key">职业</div>
-						<div class="value">{{=it.b112.b62}}</div>
+						<div class="value">{{=it.b112.b62?it.b112.b62:'学生'}}</div>
 					</li>
 					<li class="detail_item">
 						<img src="../assets/img/info_income.png">

@@ -3,71 +3,40 @@
 * @Date:   2016-04-28
 */
 define(function(require,exports,module) {
-    // var allow = location.href.indexOf("192.168") != -1 ? false : true;
-    var allow = false;
-    var loadingRemain = function(boolean) {//加载动画
-        var loadingDom = [
-            '<div class="loadingBox" style="position: fixed;width: 100%;height: 100%; background:#efefef;opacity:0.8;left:0;top:0;z-index:1000;">',
-                '<div class="loadingImg" style="margin: auto;width: 50px;height: 50px;position: absolute;left: 0;right: 0;bottom: 0;top: 0;">',
-                    '<img src="../../assets/img/loading.gif" style="width:100%;height:100%;">',
-                '</div>',
-            '</div>'
-        ].join('');
-        if (boolean) {
-            $('body').append(loadingDom);
-        } else {
-            $('.loadingBox').remove();
-        }
-    };
-
-
-    //ajax请求
-    exports.ajax = function (json) {
-        var type = json.type;
-        var data = json.data;
-        var url = json.url;
-        if(allow){
-            url = url.split("!").join("?");
-            url = url.split("@").join("&");
-        }
-        else{
-            url = url.split("?").join("!");
-            url = url.split("&").join("@");
-            console.log(url);
-            url = "/lovedate/url.jsp?url=" + url;
-        }
-        var loading = json.loading;
-        if(loading) {
-            loadingRemain(true);
-        }
-        $.ajax({
-            type : type,
-            data : data,
-            url : url,
-            timeout: 30000,
-            cache:false,
-            dataType: "json", 
-            success : function(res, textStatus, jqXHR) {
-                loadingRemain(false);
-                if (res.status == 1) {
-                    if (json.suc && typeof json.suc === 'function') {
-                        json.suc(res);
-                    }
-                } else {
-                    if(json.err && typeof json.err === 'function'){
-                        json.err(res.exceptionMessage);
-                    }
-                }
-            },
-            error : function(e,errormsg,msg){
-                loadingRemain(false);
-                if(json.err){
-                    json.err(errormsg,"fail");
-                } else {
-                    console.log(errormsg);
-                }
+    //根据参数名称获取enum数组
+    exports.getEnum = function(key) {
+        var enumJson = require('../../common/json/enum.json');
+        var returnEnumArr = [];
+        // console.log(enumJson.body);
+        enumJson.body.forEach(function(value,index) {
+            // console.log(index + '   ' + value);
+            if(key == value.b20) {
+                value.b98.forEach(function(v,i) {
+                    returnEnumArr.push({
+                        code: v.b22,
+                        value: v.b21
+                    });
+                });
             }
         });
+        return returnEnumArr;
+    };
+
+    //根据code获取name
+    exports.getEnumNameByCode = function(key, code) {
+        var enumJson = require(baseUrl + '/lovedate/common/json/enum.json');
+        // console.log(enumJson)
+        var returnValue = '';
+        enumJson.body.forEach(function(value,index) {
+            if(key == value.b20) {
+                value.b98.forEach(function(v,i) {
+                    if(code == v.b22) {
+                        returnValue = v.b21;
+                    }
+                });
+            }
+        });
+        return returnValue
     };
 
     exports.loadPage = function(url) {
@@ -124,6 +93,22 @@ define(function(require,exports,module) {
         }
     }
 
-    exports.loadingRemain = loadingRemain;
+
+    exports.convertImgToBase64 = function(url, callback, outputFormat){ 
+        var canvas = document.createElement('CANVAS'); 
+        var ctx = canvas.getContext('2d'); 
+        var img = new Image; 
+        img.crossOrigin = 'Anonymous'; 
+        img.onload = function(){ 
+          canvas.height = img.height; 
+          canvas.width = img.width; 
+          ctx.drawImage(img,0,0); 
+          var dataURL = canvas.toDataURL(outputFormat || 'image/png'); 
+          callback.call(this, dataURL); 
+          // Clean up 
+          canvas = null; 
+        }; 
+        img.src = url; 
+    } 
 
 });
