@@ -6,8 +6,10 @@ define(function(require,exports,module) {
 	var albumBig = require('albumBig');
 	var doT = require('doT');
 	var ajax = require('ajax');
+	var tools = require('tools');
+	var globalState = require('globalState');
 	if(debug) {
-		var isVip = 2;
+		var isVip = 1;
 	}
 	function getVisiterTotal() {
 		$('.person_lists').hide();
@@ -15,6 +17,7 @@ define(function(require,exports,module) {
 		ajax.ajax({
 			url: '/lp-bus-msc/f_109_12_1.service',
 			type: 'POST',
+			loading: true,
 			data: {
 				// a95: '',
 			},
@@ -35,6 +38,7 @@ define(function(require,exports,module) {
 		ajax.ajax({
 			url: '/lp-bus-msc/f_109_10_1.service',
 			type: 'POST',
+			loading: true,
 			data: {
 				// a95: '',
 			},
@@ -48,13 +52,19 @@ define(function(require,exports,module) {
 						name: v.b52,
 						age: v.b1,
 						height: v.b33,
-						province: v.b67,
-						city: v.b9,
+						province: tools.getProvinceNameById(v.b67),
+						city: tools.getCityIds(v.b67,v.b9),
 						visitTime: v.b16,
-						isVip: v.b144
+						isVip: v.b144,
+						personId: v.b80
 					});
 				});
 				$('.person_lists').append(personListDom);
+				$('.person_item .head_img').click(function() {
+					var userId = $(this).attr('data-personid');
+					globalState.setPersonId(userId);
+					location.href = '../personhome.html';
+				})
 			},
 			err: function(err) {
 				console.log(err);

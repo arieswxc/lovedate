@@ -1,0 +1,113 @@
+@import url('../common/global.css');
+body{
+	font-size: 0;
+}
+.vip_banner{
+	width: 100%;
+	height: 3rem;
+}
+.package_title{
+	font-size: .28rem;
+	color: #aaaaaa;
+	background: #241b2a;
+	height: .4rem;
+	line-height: .4rem;
+	margin-top: .2rem;
+	margin-left: .2rem;
+}
+.package{
+	font-size: 0;
+	color: #ffffff;
+	background: #312837;
+}
+.package_item{
+	height: .96rem;
+	line-height: .96rem;
+	overflow: hidden;
+}
+.package_item img{
+	float: left;
+	width: .48rem;
+	line-height: .48rem;
+	margin-top: .24rem;
+	margin-left: .4rem;
+}
+.package_item div:nth-child(2){
+	float: left;
+	font-size: .26rem;
+	margin-left: .2rem;
+}
+.package_item div:nth-child(3){ 
+	float: left;
+	font-size: .26rem;
+}
+.package_item div:nth-child(3) span{
+	font-size: .3rem;
+	margin-left: 1.5rem;
+}
+.package_item div:nth-child(4){ 
+	font-size: .28rem;
+	width: 1rem;
+	height: .5rem;
+	line-height: .5rem;
+	background: #e43f3f;
+	text-align: center;
+	float: right;
+	margin-right: .4rem;
+	margin-top: .23rem;
+	border-radius: 2rem;
+}
+.provilege_title{
+	font-size: .28rem;
+	color: #aaaaaa;
+	background: #241b2a;
+	height: .4rem;
+	line-height: .4rem;
+	margin-top: .2rem;
+	margin-left: .2rem;
+}
+.provilege{
+	font-size: 0;
+	color: #ffffff;
+	background: #312837;
+}
+.provilege_item{
+	height: .64rem;
+	line-height: .64rem;
+}
+.provilege_item img{
+	float: left;
+	width: .36rem;
+	height: .36rem;
+	margin-left: .4rem;
+	margin-top: .14rem;
+}
+.provilege_item div{
+	float: left;
+	font-size: .28rem;
+	margin-left: .3rem;
+}
+.message{
+	font-size: .28rem;
+	color: #ffffff;
+}
+.message ul{}
+.message li{
+	margin-top: .36rem;
+}
+.message li .name{
+	color: #e43f3f;
+	margin-left: .2rem;
+}
+.message .convert_btn{
+	font-size: .32rem;
+	height: .6rem;
+	line-height: .6rem;
+	text-align: center;
+	width: 3rem;
+	margin: auto;
+	margin-top: .6rem;
+	background: #e43f3f;
+	border-radius: 2rem;
+	margin-bottom: .2rem;
+}

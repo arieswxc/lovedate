@@ -48,7 +48,7 @@ define(function(require,exports,module) {
 			callback: function(res){
 				console.log(res);
 				LS.setItem('profileInfo', JSON.stringify(profileInfo));
-				history.back();
+				history.go(-1);
 			},
 			err: function(err) {
 				console.log(err);

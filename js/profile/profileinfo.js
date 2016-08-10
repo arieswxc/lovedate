@@ -6,6 +6,7 @@ define(function(require,exports,module) {
 	var doT = require('doT');
 	var ajax = require('ajax');
 	var select = require('select');
+	var select_address = require('select_address');
 	var tools = require('tools');
 
 	(function init() {
@@ -17,6 +18,7 @@ define(function(require,exports,module) {
 		ajax.ajax({
 			url: '/lp-bus-msc/f_108_10_1.service',
 			type: 'POST',
+			loading: true,
 			data: {
 				// a78: '',
 				// a95: '',
@@ -34,6 +36,8 @@ define(function(require,exports,module) {
 				templateData.b195 = tools.getEnumNameByCode('indulged', templateData.b195);//恋爱观
 				templateData.b196 = tools.getEnumNameByCode('meet_place', templateData.b196);//首次见面希望
 				templateData.b197 = tools.getEnumNameByCode('love_place', templateData.b197);//爱爱的地点
+				templateData.b9 = tools.getCityIds(templateData.b67,templateData.b9);//市
+				templateData.b67 = tools.getProvinceNameById(templateData.b67);//省
 				$('body').append(template(templateData));
 				events();
 			},
@@ -106,11 +110,15 @@ define(function(require,exports,module) {
 		}).on('click','.info_item .indulged',function(e) {
 			selectByKey($(this), 'b195', 'indulged', '恋爱观');
 		}).on('click','.info_item .address',function(e) {
-			select.selectPI({
+			var self = $(this);
+			var addressEnumArr = require('../../common/json/provence.json');
+			console.log(addressEnumArr)
+			select_address.selectPI({
 				title: '选择地区',
-				selectOptions: [],
+				selectOptions: addressEnumArr.body,
 				confirmCallback: function(data){
-
+					updateInfo(['b67','b9'],[data.provinceId,data.cityId]);
+					self.text(data.provinceName + data.cityName);
 				}
 			})
 		}).on('click','.info_item .wage',function(e) {

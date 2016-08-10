@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>支付</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+	<script src="../common/js/global.js"></script>
+	<script src="../common/js/sea.min.js"></script>
+	<script src="../common/js/config.js"></script>
+	<script src="../common/js/lib/crypto-js.js"></script>
+	<link rel="stylesheet" type="text/css" href="../assets/css/pay.css">
+</head>
+<body>
+	<div class="header_back">
+		<img src="../assets/img/back.png">
+	</div>
+	<ul class="pay_box">
+		<li class="pay_item">
+			<img class="pay_img" src="../assets/img/alipay.png">
+			<div class="pay_dec">支付宝支付</div>
+			<div class="pay_check"></div>
+			<img class="pay_check_img" src="../assets/img/check_yes.png" style="display:none">
+		</li>
+		<li class="pay_item">
+			<img class="pay_img" src="../assets/img/wechat_pay.png">
+			<div class="pay_dec">微信支付</div>
+			<div class="pay_check" style="display:none"></div>
+			<img class="pay_check_img" src="../assets/img/check_yes.png">
+		</li>
+	</ul>
+
+	<div class="confirm_pay">确认支付<span>98.0</span>元</div>
+	<div class="notice">成为会员即表示你已同意爱约会<a>服务条款</a></div>
+</body>
+<script type="text/javascript">
+    seajs.use('../js/pay.js');
+</script>
+</html>

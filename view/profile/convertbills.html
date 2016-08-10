@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>话费兑换</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+	<script src="../../common/js/global.js"></script>
+	<script src="../../common/js/sea.min.js"></script>
+	<script src="../../common/js/config.js"></script>
+	<script src="../../common/js/lib/crypto-js.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../assets/css/convertbills.css">
+</head>
+<body>
+	<div class="header_back">
+		<img src="../../assets/img/back.png">
+	</div>
+	<div class="convert">
+		<input class="phone_input" type="tel" name="" placeholder="请输入手机号" />	
+		<div class="convert_btn">兑换</div>
+	</div>
+	
+
+	<div class="convert_late">
+		<div>您来晚了。</div>
+		<div>您于<span>5月22号</span>参加的第2期充值活动，对应的赠送话费名额已用完。</div>
+		<div>作为补偿，额外<span class="red_text">赠送您一个月VIP</span></div>
+	</div>
+</body>
+<script type="text/javascript">
+    seajs.use('../../js/profile/convertbills.js');
+</script>
+</html>

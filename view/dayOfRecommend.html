@@ -4,9 +4,10 @@
 	<title>每日推荐</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+	<script src="../common/js/global.js"></script>
 	<script src="../common/js/sea.min.js"></script>
 	<script src="../common/js/config.js"></script>
-	<script src="../common/js/global.js"></script>
+	<script src="../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../assets/css/dayOfRecommend.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
 	</div>
 
 	<ul class="person_lists">
-		<li class="person_item">
+		<!-- <li class="person_item">
 			<div class="overflow_hidden">
 				<img src="../assets/img/headImg.jpg">
 				<div class="info_box">
@@ -45,9 +46,22 @@
 				</div>
 			</div>
 			<div class="border"></div>
-		</li>
+		</li> -->
 	</ul>
-	
+	<script type="text/x-dot-template" id="recommender">
+		<li class="person_item">
+			<div class="overflow_hidden">
+				<img src="{{=it.b57}}">
+				<div class="info_box">
+					<div class="name">{{=it.b52}}</div>
+					<div class="info">{{=it.b67}} · {{=it.b1}}岁 · {{=it.b33}}cm</div>
+				</div>
+			</div>
+			<div class="border"></div>
+		</li>
+	</script>
+
+
 	<div class="say_hello">一键打招呼</div>
 		
 		

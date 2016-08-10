@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
 	<script src="../../common/js/global.js"></script>
 	<script src="../../common/js/sea.min.js"></script>
+	<script src="../../common/js/lib/seajs-text.js"></script>
 	<script src="../../common/js/config.js"></script>
 	<script src="../../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/profilelover.css">
@@ -41,7 +42,7 @@
 	<script type="text/x-dot-template" id="person_item">
 		<li class="person_item">
 			<div class="box">
-				<img class="head_img" src="{{=it.photoUrl}}">
+				<img class="head_img" src="{{=it.photoUrl}}" data-id={{=it.personId}}>
 				<div class="content">
 					{{? it.isVip=='1'}}
 					<div class="name name_huangguan"><span>{{=it.name}}</span><img src="../../assets/img/huangguan.png"></div>

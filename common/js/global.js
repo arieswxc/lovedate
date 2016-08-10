@@ -27,3 +27,16 @@ for(var k=40; k<=120; k++) {
 	weightSection.push(k);
 }
 
+document.onclick = function(e) {
+	if(e.target.parentNode.className == 'header_back') {
+		history.back();
+	}
+}
+
+function isTrue(str) {
+	if(str=='null' || str=='undefined' || str=='false' || str=='' || str==null || str==undefined || str==false) {
+		return false;
+	} else {
+		return true;
+	}
+}

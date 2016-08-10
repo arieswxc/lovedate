@@ -29,11 +29,12 @@ define(function(require,exports,module) {
 		ajax.ajax({
 			url: '/lp-bus-msc/f_108_11_2.service',
 			type: 'POST',
+			loading: true,
 			data: postProfileInfo,
 			callback: function(res){
 				console.log(res);
 				LS.setItem('profileInfo', JSON.stringify(profileInfo));
-				history.back();
+				history.go(-1);
 			},
 			err: function(err) {
 				console.log(err);

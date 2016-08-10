@@ -4,9 +4,10 @@
 	<title>最近访客</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
-	<script src="../../common/js/sea.min.js"></script>
-	<script src="../../common/js/config.js"></script>
 	<script src="../../common/js/global.js"></script>
+	<script src="../../common/js/sea.min.js"></script>
+	<script src="../../common/js/lib/seajs-text.js"></script>
+	<script src="../../common/js/config.js"></script>
 	<script src="../../common/js/lib/crypto-js.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/profilevisiter.css">
 </head>
@@ -43,7 +44,7 @@
 	<script type="text/x-dot-template" id="person_item">
     	<li class="person_item">
 			<div class="box">
-				<img class="head_img" src="{{=it.photoUrl}}">
+				<img class="head_img" data-personId={{=it.personId}} src="{{=it.photoUrl}}">
 				<div class="content">
 					{{? it.isVip=='1'}}
 					<div class="name name_huangguan"><span>{{=it.name}}</span><img src="../../assets/img/huangguan.png"></div>
@@ -51,7 +52,7 @@
 					<div class="name"><span>{{=it.name}}</span></div>
 					{{?}}
 					<div class="info">{{=it.age}}岁 | {{=it.height}}cm | {{=it.province}} {{=it.city}}</div>
-					<div class="time">到访时间：<span>{{=it.visitiTime}}</span></div>
+					<div class="time">到访时间：<span>{{=it.visitTime?it.visitTime:''}}</span></div>
 				</div>
 				<img class="right" src="../../assets/img/right.png">
 			</div>

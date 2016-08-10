@@ -8,6 +8,7 @@ define(function(require,exports,module) {
 	var albumBig = require('albumBig');
 	var tools = require('tools');
 	var globalState = require('../common/js/globalState');
+	var tools = require('tools');
    	(function init(personId){
    		getPersonInfo(personId);
 
@@ -26,7 +27,7 @@ define(function(require,exports,module) {
 				// a38: '',
 			},
 			callback: function(res) {
-				// console.log(res);
+				console.log(res);
 				var template = doT.template($('#person_into').html());
 				var templateData = res.body;
 				// templateData.b112.b19 = tools.getEnumNameByCode('educationLevel', templateData.b19);//学历
@@ -39,6 +40,10 @@ define(function(require,exports,module) {
 				if(templateData.b114){
 					templateData.b114.b19 = tools.getEnumNameByCode('educationLevel', templateData.b114.b19);//择友学历
 				}
+
+				templateData.b112.b9 = tools.getCityIds(templateData.b112.b67,templateData.b112.b9);//市
+				templateData.b112.b67 = tools.getProvinceNameById(templateData.b112.b67);//省
+
 				console.log(templateData)
 				$('body').append(template(templateData));
 				var albums = [];

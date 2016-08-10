@@ -7,5 +7,9 @@ define(function(require,exports,module) {
 		$('.mesage_person_list').on('click','.person_item', function(e) {
 			location.href = './message.html'
 		});
+
+		$('.message_none .fill_btn').click(function() {
+			location.href = './profile/profileinfo.html';
+		})
 	}
 });

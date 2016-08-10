@@ -23,6 +23,12 @@ define(function(require,exports,module) {
     exports.ajax = function (json) {
         var type = json.type;
         var data = json.data;
+        for(var key in data) {
+            if(data[key]=='' || data[key]==null) {
+                delete data[key];
+            }
+        }
+
         var url = 'http://192.168.0.122:8080' + json.url;
         var loading = json.loading;
         if(loading) {
@@ -34,7 +40,7 @@ define(function(require,exports,module) {
             userId = LS.getItem('userId');
         }
         
-        if(json.uploadFormat){
+        if(json.uploadFormat){//如果是上传文件
             data.append("p2", LS.getItem('userId'));
             data.append("p1", LS.getItem('sessionId'));
             $.ajax({
@@ -69,20 +75,33 @@ define(function(require,exports,module) {
                 }
             });
         } else {
-            $.extend(data, {
-                p1: LS.getItem('sessionId'),
-                p2: userId,
-                m4: 'test',
-                m5: '100',
-                m6: '1.0.0',
-                m7: 3,
-                m11: 'wx',
-                // m16: '',
-                m18: 'lovedate',
-            });
+            if(json.login) {//如果是登录
+                var postdata = $.extend({
+                    m4: 'test',
+                    m5: '100',
+                    m6: '1.0.0',
+                    m7: 3,
+                    m11: 'wx',
+                    // m16: '',
+                    m18: 'lovedate',
+                },data);
+            } else {
+                var postdata = $.extend({
+                    p1: LS.getItem('sessionId'),
+                    p2: userId,
+                    m4: 'test',
+                    m5: '100',
+                    m6: '1.0.0',
+                    m7: 3,
+                    m11: 'wx',
+                    // m16: '',
+                    m18: 'lovedate',
+                },data);
+            }
+            
             $.ajax({
                 type : type,
-                data : data,
+                data : postdata,
                 url : url,
                 timeout: 30000,
                 dataType: "json", 
@@ -110,8 +129,36 @@ define(function(require,exports,module) {
                 }
             });
         }
-        
     };
+
+     //ajax请求
+    exports.ajax2 = function (json) {
+        var type = json.type;
+        var data = json.data;
+        var url = json.url;
+        url = url.split("?").join("!");
+        url = url.split("&").join("@");
+        url = "../url.jsp?url=" + url;
+        $.ajax({
+            type : type,
+            data : data,
+            url : url,
+            timeout: 30000,
+            cache:false,
+            dataType: "json", 
+            success : function(res) {
+                console.log(res);
+                if (json.suc && typeof json.suc === 'function') {
+                    json.suc(res);
+                }
+            },
+            error : function(error){
+                // console.log(error.responseText);
+                json.err(error.responseText);
+            }
+        });
+    };
+
 
     // exports.loadingRemain = loadingRemain;
 

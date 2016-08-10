@@ -90,3 +90,11 @@
 	border-top: 1px solid rgba(255,255,255,0.5);
 	border-bottom: 1px solid rgba(255,255,255,0.5);
 }
+
+/*  select_address */
+.select_box .select_items1{
+	width: 49.5%;
+}
+.select_box .select_items2{
+	width: 49.5%;
+}

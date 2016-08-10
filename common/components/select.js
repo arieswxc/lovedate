@@ -5,7 +5,6 @@
 define(function(require,exports,module) {
 	exports.selectPI = function(config) {
 		var selectContain = {};
-		
 		selectContain.create = function(callback) {
 			var bg = document.createElement('div');
 			bg.className = 'select_bg';
@@ -27,7 +26,13 @@ define(function(require,exports,module) {
 			selectContain.setConstant();
 			selectContain.setVariables();
 		}
-		
+		//移除控件
+		selectContain.remove = function() {
+			if(selectContain.selectBg.parentNode) {
+				selectContain.selectBg.parentNode.removeChild(selectContain.selectBg);
+				selectContain.selectBox.parentNode.removeChild(selectContain.selectBox);
+			}
+		}
 		//设置常量
 		selectContain.setConstant = function() {
 			//选择插件dom
@@ -83,11 +88,7 @@ define(function(require,exports,module) {
 			selectContain.selectItems.innerHTML = selectItemDom;
 			selectContain.itemHeight = document.getElementsByClassName('select_item')[4].offsetHeight;//一个选项高度
 		}
-		//移除控件
-		selectContain.remove = function() {
-			selectContain.selectBg.parentNode.removeChild(selectContain.selectBg);
-			selectContain.selectBox.parentNode.removeChild(selectContain.selectBox);
-		}
+		
 
 		selectContain.init = function() {
 			selectContain.create();
@@ -102,11 +103,8 @@ define(function(require,exports,module) {
 		selectContain.confirmAndCancelEvent = function() {
 			var selectItemArr = selectContain.selectItemArr;
 			selectContain.cancelBtn.addEventListener('click',function(e) {
-				if(selectContain.isScrollend) {
-					selectContain.recievePara.cancelCallback();
-					selectContain.remove();
-				}
-				
+				selectContain.recievePara.cancelCallback();
+				selectContain.remove();
 			});
 			selectContain.confirmBtn.addEventListener('click',function(e) {
 				if(selectContain.isScrollend) {
@@ -133,8 +131,20 @@ define(function(require,exports,module) {
 			selectItems.addEventListener('touchstart',function(e) {
 				isTouchEnd = false;
 				selectContain.isScrollend = false;
+				// e.preventDefault()
+			});
+			selectItems.addEventListener('touchcancel',function(e) {
+				// selectContain.selectTitle.innerHTML = 'cancel';
+				isTouchEnd = true;
+				if(selectContain.isScrollend) {
+					var scrollMultiple = selectItems.scrollTop/itemHeight;
+					selectItems.scrollTop = Math.round(scrollMultiple)*itemHeight;
+					// isTouchEnd = false;
+				}
 			});
 			selectItems.addEventListener('touchend',function(e) {
+				// alert('touchend' + selectContain.isScrollend)
+				// selectContain.selectTitle.innerHTML = 'end';
 				isTouchEnd = true;
 				if(selectContain.isScrollend) {
 					var scrollMultiple = selectItems.scrollTop/itemHeight;
@@ -146,7 +156,6 @@ define(function(require,exports,module) {
 			function justifyIsScrollStop() {  
 		        // 判断此刻到顶部的距离是否和1秒前的距离相等  
 		        if(selectItems.scrollTop == topValue) { 
-		        	console.log('scrollend') 
 		            clearInterval(interval);  
 		            interval = null;  
 		            var scrollMultiple = selectItems.scrollTop/itemHeight;

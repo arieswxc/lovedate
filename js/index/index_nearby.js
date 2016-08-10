@@ -35,19 +35,19 @@ define(function(require,exports,module) {
 	})();
 
 	exports.init = function() {
+		$('.position').text(LS.getItem('address'));
 		ajax.ajax({
 			url: '/lp-bus-msc/f_108_16_1.service',
 			type: 'post',
 			loading: true,
 			data: {
-				a69: JSON.parse(LS.getItem('profileInfo')).b69,
-				// a95: '10',
-				// a9: '',
-				// a67:'',
-				// a69:'',
-				// a40:'',
-				// a38:'',
-				// a117:''
+				a69: isTrue(LS.getItem('profileInfo'))?(JSON.parse(LS.getItem('profileInfo'))).b69:1,
+				a95: 1,
+				a9: isTrue(LS.getItem('profileInfo'))?(JSON.parse(LS.getItem('profileInfo'))).b9:'',
+				a67: isTrue(LS.getItem('profileInfo'))?(JSON.parse(LS.getItem('profileInfo'))).b67:'',
+				a40: isTrue(LS.getItem('lon'))?LS.getItem('lon'):'',
+				a38: isTrue(LS.getItem('lat'))?LS.getItem('lat'):'',
+				a117: ''
 			},
 			callback: function(res) {
 				console.log(res);

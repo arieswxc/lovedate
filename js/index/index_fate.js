@@ -40,13 +40,13 @@ define(function(require,exports,module) {
 	(function events() {
 		$('.fate_header').on('click','li img',function(e) {
 			var userId = $(this).attr('data-id');
-			console.log(userId);
+			// console.log(userId);
 			globalState.setPersonId(userId);
 			location.href = './personhome.html';
 		});
 		$('.fate_person_list').on('click','li.person_item .person_box', function() {
 			var userId = $(this).attr('data-id');
-			console.log(userId);
+			// console.log(userId);
 			globalState.setPersonId(userId);
 			location.href = './personhome.html';
 		}).on('click','li.person_item .love_btn',function(e) { //关注好友
@@ -79,6 +79,10 @@ define(function(require,exports,module) {
 				}
 			});
 		});
+
+		$('.fate_ad').click(function() {
+			location.href = './profile/profilevipprovilege.html';
+		})
 	})();
 
 	exports.init = function() {
@@ -87,16 +91,16 @@ define(function(require,exports,module) {
 			type: 'post',
 			loading: true,
 			data: {
-				// a69: LS.getItem('sex'),
-				// a95: 10,
-				// a9: '',
-				// a67: '',
-				// a40: '',
-				// a38: '',
-				// a117: ''
+				a69: isTrue(LS.getItem('profileInfo'))?(JSON.parse(LS.getItem('profileInfo'))).b69:'',
+				a95: 1,
+				a9: isTrue(LS.getItem('profileInfo'))?(JSON.parse(LS.getItem('profileInfo'))).b9:'',
+				a67: isTrue(LS.getItem('profileInfo'))?(JSON.parse(LS.getItem('profileInfo'))).b67:'',
+				a40: isTrue(LS.getItem('lon'))?LS.getItem('lon'):'',
+				a38: isTrue(LS.getItem('lat'))?LS.getItem('lat'):'',
+				a117: ''
 			},
 			callback: function(res) {
-				// console.log(res);
+				console.log(res);
 				initBanner(res.body.b179);
 				initPerson(res.body.b180);
 			},

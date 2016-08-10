@@ -1,0 +1,42 @@
+@import url('../common/global.css');
+body{
+	font-size: 0;
+}
+.phone_input{
+	display: block;
+	width: 5.5rem;
+	height: .8rem;
+	line-height: .8rem;
+	border: 1px solid #aaaaaa;
+	font-size: .28rem;
+	color: #aaaaaa;
+	text-indent: .4rem;
+	border-radius: 2rem;
+	background: #241b2a;
+	margin: auto;
+	margin-top: .3rem;
+}
+.convert_btn{
+	width: 5.5rem;
+	height: .8rem;
+	line-height: .8rem;
+	font-size: .32rem;
+	color: #ffffff;
+	border-radius: 2rem;
+	background: #e43f3f;
+	text-align: center;
+	margin: auto;
+	margin-top: .6rem;
+}
+
+.convert_late{
+	display: none;
+	font-size: .3rem;
+	color: #ffffff;
+	margin-top: .72rem;
+	padding: 0 .2rem;
+	line-height: .5rem;
+}
+.red_text{
+	color: #e43f3f;
+}

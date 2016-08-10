@@ -43,12 +43,13 @@ define(function(require,exports,module) {
 	function updateQQ(postProfileInfo,profileInfo) {
 		ajax.ajax({
 			url: '/lp-bus-msc/f_108_11_2.service',
+			loading: true,
 			type: 'POST',
 			data: postProfileInfo,
 			callback: function(res){
 				console.log(res);
 				LS.setItem('profileInfo', JSON.stringify(profileInfo));
-				history.back();
+				history.go(-1);
 			},
 			err: function(err) {
 				console.log(err);

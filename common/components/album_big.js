@@ -12,8 +12,8 @@ define(function(require,exports,module) {
         // console.log(thisUrl);
         window.location=thisUrl + '#foo';
         isNeedBack = true;
-        var screenWidth =window.screen.width;//屏宽
-        var screenHeight =window.screen.height;//屏高
+        var screenWidth =window.innerWidth;//屏宽
+        var screenHeight =window.innerHeight;//屏高
 
         var bigPicBgDom = $('<div class="bigPicBg"></div>');
         var bgOpacity = isBigBooeal?'1':'0.5';
@@ -94,6 +94,8 @@ define(function(require,exports,module) {
             'top: 0;',
             'height: 100%;'
         ];
+        console.log(screenWidth + '--' + screenHeight);
+        // alert((screenHeight - screenWidth)/2);
         bigPicUl.attr('style', bigPicUlStyle.join(''));
         for (var i = 0; i < len; i++) {
             var picItemDom = $('<img class="bigPicItem" data-index="' + i + '" src="' + data[i] + '">'); //相册中的每张图片

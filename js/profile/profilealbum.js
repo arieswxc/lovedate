@@ -3,6 +3,8 @@
 * @Date:   2016-07-28
 */
 define(function(require,exports,module) {
+	var wx =require('wx');
+	var wx_config =require('wx_config');
 	var albumBig = require('albumBig');
 	var doT = require('doT');
 	var ajax = require('ajax');
@@ -13,6 +15,7 @@ define(function(require,exports,module) {
 		ajax.ajax({
 			url: '/lp-file-msc/f_111_11_1.service',
 			type: 'POST',
+			loading: true,
 			data: {
 				// a78: '',
 				// a95: '',
@@ -45,6 +48,14 @@ define(function(require,exports,module) {
 
 		//添加相册
 		$('.album .img_box .add_btn').click(function(e) {
+			// wx.chooseImage({
+			//     count: 9, // 默认9
+			//     sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+			//     sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+			//     success: function (res) {
+			//         var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+			//     }
+			// });
 			$('input').trigger('click');
 		});
 
@@ -62,6 +73,7 @@ define(function(require,exports,module) {
 		ajax.ajax({
 			url: '/lp-file-msc/f_111_12_3.service',
 			type: "POST",
+			loading: true,
 			data: {
 				a34: delId
 			},

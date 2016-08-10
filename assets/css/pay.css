@@ -1,0 +1,69 @@
+@import url('../common/global.css');
+body{
+	font-size: 0;
+}
+
+.confirm_pay{
+	width: 5.5rem;
+	height: .8rem;
+	line-height: .8rem;
+	font-size: .32rem;
+	color: #ffffff;
+	border-radius: 2rem;
+	background: #e43f3f;
+	text-align: center;
+	margin: auto;
+	margin-top: 1rem;
+}
+.pay_box{
+	font-size: 0;
+	background: #312837;
+	color: #ffffff;
+	margin-top: .4rem;
+}
+.pay_item{
+	height: 1rem;
+	line-height: 1rem;
+}
+.pay_img{
+	float: left;
+	width: .48rem;
+	height: .48rem;
+	margin-left: .2rem;
+	margin-top: .26rem;
+}
+.pay_item .pay_dec{
+	float: left;
+	font-size: .28rem;
+	margin-left: .2rem;
+}
+.pay_check{
+	float: right;
+	width: .34rem;
+	height: .34rem;
+	margin-top: .33rem;
+	border: 1px solid #ffffff;
+	margin-right: .2rem;
+	border-radius: 50%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.pay_check_img{
+	float: right;
+	width: .34rem;
+	height: .34rem;
+	margin-top: .33rem;
+	margin-right: .2rem;
+	border-radius: 50%;
+}
+.notice{
+	text-align: center;
+	color:#ffffff;
+	font-size: .2rem;
+	margin-top: .2rem;
+}
+.notice a{
+	color: #4b3fe4;
+	text-decoration:underline
+}

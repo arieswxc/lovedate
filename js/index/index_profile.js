@@ -23,9 +23,9 @@ define(function(require,exports,module) {
 			callback: function(res) {
 				// console.log(res);
 				var result = res.body;
-				// LS.setItem('profile', JSON.stringify(res.body));
+				LS.setItem('profileInfo', JSON.stringify(res.body.b112));
 				fillProfileInfo(result);
-				bindEvent();
+				// bindEvent();
 			},
 			err: function(err){
 				console.log(err);
@@ -46,6 +46,7 @@ define(function(require,exports,module) {
 		}
 		$('.profile_header .status').text(nameStatus);//审核状态
 		var albumsDom = '';
+		$('.profile_album .ablum_list').html('<li class="addImg"><img src="../assets/img/add_img.png"></li>');
 		var albumsLen = profileInfoObj.b113.length;
 		for(var i=0; i < Math.min(albumsLen,3); i++) {
 			albumsDom += '<li class="ablum_item"><img src="' + profileInfoObj.b113[i].b60 +'"></li>';
@@ -64,7 +65,7 @@ define(function(require,exports,module) {
 		//手机认证
 		if(profileInfoObj.b112.b202) {
 			$('.classify_item.phone .value').show();
-			$('.classify_item.phone .value span').text('手机号');
+			$('.classify_item.phone .value span').text(profileInfoObj.b112.b81);
 		} else {
 			$('.classify_item.phone .to_auth').show();
 		}
@@ -75,17 +76,22 @@ define(function(require,exports,module) {
 
 	exports.init = function() {
 		getProfileInfo();
+		bindEvent();
 	};
 	
 	function bindEvent() {
 		$('.profile_album .addImg').click(function() {
-			location.href = './profile/profilealbum.html'
+			location.href = './profile/profilealbum.html';
 		});
+		
 		$('.profile_album .ablum_item').click(function() {
 			console.log($(this).index())
 			console.log(albumsArr);
    			albumBig.showBigPic(albumsArr,$(this).index()-1,false);
-		})
+		});
+		$('.profile_classify .vip').click(function() {//手机认证
+			location.href = './profile/profilevipprovilege.html'
+		});
 		$('.profile_classify .phone').click(function() {//手机认证
 			location.href = './profile/profilephone.html'
 		});
@@ -101,7 +107,6 @@ define(function(require,exports,module) {
 		$('.profile_header .info_box,.profile_header .head_img').click(function() {//进入个人资料
 			location.href = './profile/profileinfo.html';
 		});
-		// 
 		$('.profile_classify .visiter').click(function() {//最近访客
 			location.href = './profile/profilevisiter.html'
 		});

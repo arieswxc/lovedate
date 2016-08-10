@@ -4,10 +4,11 @@
 */
 define(function(require,exports,module) {
     //根据参数名称获取enum数组
+    var enumJson = require('../../common/json/enum.json');
+    var provinceJson = require('../../common/json/provence.json');
+        // console.log(enumJson);
     exports.getEnum = function(key) {
-        var enumJson = require('../../common/json/enum.json');
         var returnEnumArr = [];
-        // console.log(enumJson.body);
         enumJson.body.forEach(function(value,index) {
             // console.log(index + '   ' + value);
             if(key == value.b20) {
@@ -24,8 +25,6 @@ define(function(require,exports,module) {
 
     //根据code获取name
     exports.getEnumNameByCode = function(key, code) {
-        var enumJson = require(baseUrl + '/lovedate/common/json/enum.json');
-        // console.log(enumJson)
         var returnValue = '';
         enumJson.body.forEach(function(value,index) {
             if(key == value.b20) {
@@ -36,8 +35,33 @@ define(function(require,exports,module) {
                 });
             }
         });
-        return returnValue
+        return returnValue;
     };
+
+    exports.getProvinceNameById = function(id) {
+        var returnName = '';
+        console.log(provinceJson)
+        provinceJson.body.forEach(function(value,index) {
+            if(id == value.provinceId) {
+                returnName = value.provinceName;
+            }
+        });
+        return returnName;
+    };
+
+    exports.getCityIds = function(pId,cId) {
+        var returnName = '';
+        provinceJson.body.forEach(function(value,index) {
+            if(pId == value.provinceId) {
+                (value.cityList).forEach(function(v,i) {
+                    if(cId == v.cityId) {
+                        returnName = v.cityName;
+                    }
+                });
+            }
+        });
+        return returnName;
+    }
 
     exports.loadPage = function(url) {
         window.location.href = url;
