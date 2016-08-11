@@ -97,13 +97,16 @@ define(function(require,exports,module) {
 				url: '/lp-file-msc/f_111_10_2.service',
 				type: "POST",
 				data: fd,
+				loading: true,
 				processData: false,  // 告诉jQuery不要去处理发送的数据
 				contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
 				callback:function(data){
+					alert('suc');
 					console.log(data);
 					uploadSucCallback();
 				},
 				err: function(err) {
+					alert('err');
 					console.log(err);
 				}
 			 });

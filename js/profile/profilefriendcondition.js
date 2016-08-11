@@ -12,7 +12,7 @@ define(function(require,exports,module) {
 	// console.log(JSON.parse(LS.getItem('profile')))
 
 	var postData = {};
-	(function event() {
+	function event() {
 		$('.condition_item .age').click(function() {
 			var self = this;
 			select.selectPI({
@@ -112,7 +112,7 @@ define(function(require,exports,module) {
 				}
 			})
 		});
-	}) ();
+	};
 	
 	function getCondition() {
 		ajax.ajax({
@@ -135,7 +135,7 @@ define(function(require,exports,module) {
 				$('.condition_item .height').text(postData.a33?postData.a33:'未填写');
 				$('.condition_item .marriageStatus').text(postData.a46?(tools.getEnumNameByCode('marriageStatus', postData.a46)):'未填写');
 
-				$('.condition_item .educationLevel').text(tools.getEnumNameByCode('educationLevel', postData.a19));
+				$('.condition_item .educationLevel').text(postData.a19?(tools.getEnumNameByCode('educationLevel', postData.a19)):'未填写');
 				$('.condition_item .address').text(postData.a9?(tools.getProvinceNameById(postData.a67) + ' ' + tools.getCityIds(postData.a67,postData.a9)):'未填写');
 				$('.condition_item .wage').text(postData.a85?postData.a85:'未填写');
 			},
@@ -167,5 +167,9 @@ define(function(require,exports,module) {
 			}
 		});
 	}
-	getCondition();
+
+	(function init() {
+		getCondition();
+		event();
+	}) ();
 });

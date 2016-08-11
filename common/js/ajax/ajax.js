@@ -34,12 +34,6 @@ define(function(require,exports,module) {
         if(loading) {
             loadingRemain(true);
         }
-        if(json.personId) {
-            userId = json.personId;
-        } else {
-            userId = LS.getItem('userId');
-        }
-        
         if(json.uploadFormat){//如果是上传文件
             data.append("p2", LS.getItem('userId'));
             data.append("p1", LS.getItem('sessionId'));
@@ -83,42 +77,37 @@ define(function(require,exports,module) {
                     m7: 3,
                     m11: 'wx',
                     // m16: '',
-                    m18: 'lovedate',
+                    m18: 'lovedate'
                 },data);
             } else {
                 var postdata = $.extend({
                     p1: LS.getItem('sessionId'),
-                    p2: userId,
+                    p2: isTrue(json.personId)?json.personId:LS.getItem('userId'),
                     m4: 'test',
                     m5: '100',
                     m6: '1.0.0',
                     m7: 3,
                     m11: 'wx',
                     // m16: '',
-                    m18: 'lovedate',
+                    m18: 'lovedate'
                 },data);
             }
-            
             $.ajax({
                 type : type,
                 data : postdata,
                 url : url,
                 timeout: 30000,
                 dataType: "json", 
-                success : function(res, textStatus, jqXHR) {
+                success : function(res) {
+                    // s(res);
                     // console.log(res);
                     loadingRemain(false);
-                    if (res.status == 1) {
-                        if (json.suc && typeof json.suc === 'function') {
-                            json.suc(res);
-                        }
-                    } else {
-                        if(json.err && typeof json.err === 'function'){
-                            json.err(res.exceptionMessage);
-                        }
+                    if (json.suc && typeof json.suc === 'function') {
+                        json.suc(res);
                     }
                 },
                 error : function(err){
+                    // alert(err);
                     loadingRemain(false);
                     var result = transResult(err.responseText);
                     if(result.code==200) {
@@ -136,6 +125,10 @@ define(function(require,exports,module) {
         var type = json.type;
         var data = json.data;
         var url = json.url;
+        var loading = json.loading;
+        if(loading) {
+            loadingRemain(true);
+        }
         url = url.split("?").join("!");
         url = url.split("&").join("@");
         url = "../url.jsp?url=" + url;
@@ -147,12 +140,14 @@ define(function(require,exports,module) {
             cache:false,
             dataType: "json", 
             success : function(res) {
+                loadingRemain(false);
                 console.log(res);
                 if (json.suc && typeof json.suc === 'function') {
                     json.suc(res);
                 }
             },
             error : function(error){
+                loadingRemain(false);
                 // console.log(error.responseText);
                 json.err(error.responseText);
             }

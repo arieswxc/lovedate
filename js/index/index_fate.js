@@ -100,7 +100,7 @@ define(function(require,exports,module) {
 				a117: ''
 			},
 			callback: function(res) {
-				console.log(res);
+				// console.log(res);
 				initBanner(res.body.b179);
 				initPerson(res.body.b180);
 			},

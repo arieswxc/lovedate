@@ -18,7 +18,7 @@ define(function(require,exports,module) {
 
 		page.phoneNum = '';//手机号码
 		page.msgCode = '';//验证码
-		page.systemName = JSON.parse(LS.getItem('profile')).b112.b152;//系统用户号
+		page.systemName = JSON.parse(LS.getItem('profileInfo')).b152;//系统用户号
 		page.events();
 	}
 	page.events = function() {

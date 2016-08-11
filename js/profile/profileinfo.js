@@ -28,16 +28,20 @@ define(function(require,exports,module) {
 				console.log(res);
 				LS.setItem('profileInfo', JSON.stringify(res.body));
 				var template = doT.template($('#profile_info').html());
-				var templateData = res.body;
-				templateData.b19 = tools.getEnumNameByCode('educationLevel', templateData.b19);//学历
-				templateData.b62 = tools.getEnumNameByCode('profession_personal', templateData.b62);//职业
-				// templateData.b62 = tools.getEnumNameByCode('wage', templateData.b62);//月收入
-				templateData.b194 = tools.getEnumNameByCode('dating_purpose', templateData.b194);//交友目的
-				templateData.b195 = tools.getEnumNameByCode('indulged', templateData.b195);//恋爱观
-				templateData.b196 = tools.getEnumNameByCode('meet_place', templateData.b196);//首次见面希望
-				templateData.b197 = tools.getEnumNameByCode('love_place', templateData.b197);//爱爱的地点
-				templateData.b9 = tools.getCityIds(templateData.b67,templateData.b9);//市
-				templateData.b67 = tools.getProvinceNameById(templateData.b67);//省
+				var templateData;
+				if(res.body) {
+					templateData = res.body;
+					templateData.b19 = tools.getEnumNameByCode('educationLevel', templateData.b19);//学历
+					templateData.b62 = tools.getEnumNameByCode('profession_personal', templateData.b62);//职业
+					// templateData.b62 = tools.getEnumNameByCode('wage', templateData.b62);//月收入
+					templateData.b194 = tools.getEnumNameByCode('dating_purpose', templateData.b194);//交友目的
+					templateData.b195 = tools.getEnumNameByCode('indulged', templateData.b195);//恋爱观
+					templateData.b196 = tools.getEnumNameByCode('meet_place', templateData.b196);//首次见面希望
+					templateData.b197 = tools.getEnumNameByCode('love_place', templateData.b197);//爱爱的地点
+					templateData.b9 = tools.getCityIds(templateData.b67,templateData.b9);//市
+					templateData.b67 = tools.getProvinceNameById(templateData.b67);//省
+				}
+				
 				$('body').append(template(templateData));
 				events();
 			},
