@@ -6,6 +6,7 @@ define(function(require,exports,module) {
 	var doT = require('doT');
 	var ajax = require('ajax');
 	var globalState = require('globalState');
+	var hint = require('hint');
 
 	function initBanner(imgList) {
 		var template = doT.template($('#fate_header_item').html());
@@ -62,16 +63,17 @@ define(function(require,exports,module) {
 			ajax.ajax({
 				url: url,
 				type: 'post',
-				loading: true,
 				data: {
 					a77: userId	
 				},
 				callback: function(res) {
 					console.log(res);
 					if(btnType == 'add') {
+						hint.show('已喜欢');
 						self.find('span').text('已喜欢');
 					} else {
 						self.find('span').text('喜欢');
+						hint.show('已取消喜欢');
 					}
 				},
 				err: function(err){

@@ -99,8 +99,6 @@ define(function(require,exports,module) {
                 timeout: 30000,
                 dataType: "json", 
                 success : function(res) {
-                    // s(res);
-                    // console.log(res);
                     loadingRemain(false);
                     if (json.suc && typeof json.suc === 'function') {
                         json.suc(res);

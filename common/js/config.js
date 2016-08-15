@@ -18,6 +18,7 @@ seajs.config({
         'wx': 'common/js/lib/jweixin-1.0.0.js',
         'wx_config': 'common/js/wechat/wx_config',
         'alert': 'common/components/alert',
+        'hint': 'common/components/hint',
         // 'enum': 'common/json/enum.json'
     },
 

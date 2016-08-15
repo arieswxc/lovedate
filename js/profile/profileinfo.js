@@ -3,11 +3,12 @@
 * @Date:   2016-04-28
 */
 define(function(require,exports,module) {
-	var doT = require('doT');
-	var ajax = require('ajax');
-	var select = require('select');
-	var select_address = require('select_address');
-	var tools = require('tools');
+	var doT = require('../../common/js/lib/doT');
+	var ajax = require('../../common/js/ajax/ajax');
+	var select = require('../../common/components/select');
+	var select_address = require('../../common/components/select_address');
+	var tools = require('../../common/js/tools');
+	var hint = require('hint');
 
 	(function init() {
 		getProfileInfo();
@@ -172,9 +173,11 @@ define(function(require,exports,module) {
 			data: postProfileInfo,
 			callback: function(res){
 				console.log(res);
+				hint.show('修改成功');
 				LS.setItem('profileInfo', JSON.stringify(profileInfo));
 			},
 			err: function(err) {
+				hint.show('修改失败');
 				console.log(err);
 			}
 		})

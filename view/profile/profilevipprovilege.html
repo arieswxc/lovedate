@@ -14,7 +14,7 @@
 	<img class="vip_banner" src="../../assets/img/vip_banner.png">	
 	<div class="package_title">超值套餐</div>
 	<div class="package">
-		<div class="package_item">
+		<!-- <div class="package_item">
 			<img src="../../assets/img/huangguan.png">
 			<div>一个月VIP</div>
 			<div><span>￥</span>38.0</div>
@@ -31,8 +31,16 @@
 			<div>六个月VIP</div>
 			<div><span>￥</span>98.0</div>
 			<div class="buy_btn">购买</div>
-		</div>
+		</div> -->
 	</div>
+	<script type="text/x-dot-template" id="vip_package">
+		<div class="package_item" data-goodscode={{=it.b13}} data-price={{=it.b126}}>
+			<img src="../../assets/img/huangguan.png">
+			<div>{{=it.b51}}</div>
+			<div><span>￥</span>{{=it.b126}}</div>
+			<div class="buy_btn">购买</div>
+		</div>
+	</script>
 	<div class="provilege_title">VIP会员特权</div>
 	<div class="provilege">
 		<div class="provilege_item">
@@ -63,6 +71,11 @@
 
 		<div class="convert_btn">兑换话费</div>
 	</div>
+<!-- 
+
+	<div class="hint_box">
+		<div>提示消息</div>
+	</div> -->
 </body>
 <script type="text/javascript">
     seajs.use('../../js/profile/profilevipprovilege.js');

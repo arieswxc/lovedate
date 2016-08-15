@@ -9,7 +9,7 @@ define(function(require,exports,module) {
 	var tools = require('tools');
 	var globalState = require('globalState');
 	if(debug) {
-		var isVip = 1;
+		var isVip = 2;
 	}
 	function getVisiterTotal() {
 		$('.person_lists').hide();
@@ -18,9 +18,6 @@ define(function(require,exports,module) {
 			url: '/lp-bus-msc/f_109_12_1.service',
 			type: 'POST',
 			loading: true,
-			data: {
-				// a95: '',
-			},
 			callback: function(res){
 				console.log(res);
 				$('.self_name').text();
@@ -40,7 +37,7 @@ define(function(require,exports,module) {
 			type: 'POST',
 			loading: true,
 			data: {
-				// a95: '',
+				a95: 10  //分页
 			},
 			callback: function(res){
 				console.log(res);
@@ -63,7 +60,6 @@ define(function(require,exports,module) {
 				$('.person_item .head_img').click(function() {
 					var userId = $(this).attr('data-personid');
 					globalState.setPersonId(userId);
-					location.href = '../personhome.html';
 				})
 			},
 			err: function(err) {
@@ -78,8 +74,9 @@ define(function(require,exports,module) {
 		} else {
 			getVisiterTotal();
 			$('.member_btn').click(function(e) {
-				isVip = 1;
-				getVisiter();
+				location.href = './profilevipprovilege.html';
+				// isVip = 1;
+				// getVisiter();
 			})
 		}
 	})();

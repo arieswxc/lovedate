@@ -34,7 +34,6 @@ define(function(require,exports,module) {
 			}
 		});
 	}
-	// login();
 
 	//第三方登录
 	var loginByWechat = {
@@ -138,7 +137,8 @@ define(function(require,exports,module) {
 		// loginByWechat.getProfileInfoByOpenidAndToken('fjsdf','fsdjlfjdslf');
 	}
 
-	loginByWechat.init();
+	login();
+	// loginByWechat.init();
 
 	function loginSocket() {
 		var socket = new WebSocket('ws://192.168.0.121:9066');
@@ -171,7 +171,7 @@ define(function(require,exports,module) {
 
 
   	// 获取 jsapi_ticket
- //  	var access_token = "1wBRkpjDJARhaSkEj81cXXHbZnEeGFZTV1SGUaPuvL3YamAnk6_3bJQYmMRPzZil4Z-MoWHJ-H-_DRg2HeNY4NlH5S4-GQAx2Miyx2_E9hU-doV0BNZidAVwLBgtivlqRWAdADADIM"
+  	var access_token = "MEH8H1LwgBnmbbq3GBglOo7m4AuMIWY6UQrkay8HqUmCGg7Dy2OTa9GMSEttSCkEkQ3N5cdX7HJdk9ZyHimV7sCjNLZi7m52ETD4ipvLg3Y01f9BpqAeS2gqKatz5LknJUDfAJAQBK"
 	// ajax.ajax2({
 	// 	url: 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ access_token + '&type=jsapi',
 	// 	type: 'get',

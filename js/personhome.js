@@ -9,6 +9,7 @@ define(function(require,exports,module) {
 	var tools = require('tools');
 	var globalState = require('../common/js/globalState');
 	var tools = require('tools');
+	var hint = require('hint');
    	(function init(personId){
    		getPersonInfo(personId);
 
@@ -39,6 +40,8 @@ define(function(require,exports,module) {
 				templateData.b112.b197 = tools.getEnumNameByCode('love_place', templateData.b112.b197);//爱爱的地点
 				if(templateData.b114){
 					templateData.b114.b19 = tools.getEnumNameByCode('educationLevel', templateData.b114.b19);//择友学历
+					templateData.b114.b9 = tools.getCityIds(templateData.b114.b67,templateData.b114.b9);//市
+					templateData.b114.b67 = tools.getProvinceNameById(templateData.b114.b67);//省
 				}
 
 				templateData.b112.b9 = tools.getCityIds(templateData.b112.b67,templateData.b112.b9);//市
@@ -77,15 +80,16 @@ define(function(require,exports,module) {
 			ajax.ajax({
 				url: url,
 				type: 'post',
-				loading: true,
 				data: {
 					a77: personId	
 				},
 				callback: function(res) {
 					console.log(res);
 					if(btnType == 'add') {
+						hint.show('已喜欢');
 						self.find('span').text('已喜欢');
 					} else {
+						hint.show('已取消喜欢');
 						self.find('span').text('喜欢');
 					}
 				},

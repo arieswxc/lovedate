@@ -3,10 +3,10 @@
 * @Date:   2016-04-28
 */
 define(function(require,exports,module) {
-	require("../assets/css/index.css");
-	var ajax = require('ajax');
-	var wx =require('wx');
-	var wx_config =require('wx_config');
+	// require("../assets/css/index.css");
+	var ajax = require('../common/js/ajax/ajax');
+	var wx =require('../common/js/lib/jweixin-1.0.0.js');
+	var wx_config =require('../common/js/wechat/wx_config.js');
 	var globalState = require('../common/js/globalState');
 
 	//底部菜单
@@ -74,6 +74,7 @@ define(function(require,exports,module) {
 						console.log(res);
 						if(res.body) {
 							LS.setItem('profileInfo', JSON.stringify(res.body));
+							LS.setItem('isVip', res.body.b144);
 						}
 					},
 					err: function(err){

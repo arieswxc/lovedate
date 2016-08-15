@@ -8,6 +8,7 @@ define(function(require,exports,module) {
 	var albumBig = require('albumBig');
 	var doT = require('doT');
 	var ajax = require('ajax');
+	var hint = require('hint');
 	var tools = require('tools');
 
 	var albumsArr = [];
@@ -79,6 +80,7 @@ define(function(require,exports,module) {
 			},
 			callback:function(data){
 				console.log(data);
+				hint.show('照片删除成功');
 				location.reload();
 			},
 			err: function(err) {
@@ -101,7 +103,7 @@ define(function(require,exports,module) {
 				processData: false,  // 告诉jQuery不要去处理发送的数据
 				contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
 				callback:function(data){
-					alert('suc');
+					hint.show('照片上传成功');
 					console.log(data);
 					uploadSucCallback();
 				},
