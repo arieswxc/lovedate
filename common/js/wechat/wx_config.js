@@ -2,11 +2,11 @@ define(function(require,exports,module) {
     var wx = require('wx');
     var locationUrl = location.href;
     if(locationUrl.indexOf('index.html') != -1) {
-        var checkData = { jsapi_ticket: 'kgt8ON7yVITDhtdwci0qedV5qlnWY_iGUTxOIEkCiK-IxIY_pKMwey1tDeShel2HS_KzMacyGgzUk-1st2Lntg',
-  nonceStr: 'uxl77s1fcb1q0k9',
-  timestamp: '1471250315',
+        var checkData = { jsapi_ticket: 'kgt8ON7yVITDhtdwci0qedV5qlnWY_iGUTxOIEkCiK-BBcpzTPDt2kNQ3Wy0XL1j8WhiFb1uum0EC4G44o60xg',
+  nonceStr: 'kvkjapc7v0k3ayv',
+  timestamp: '1471338897',
   url: 'http://aries.vip.natapp.cn/lovedate/view/index.html',
-  signature: '9f3ebb8d48da892fa7da484bf93af8681709b111' }
+  signature: '6d6362371e406450babcd295863090d9fe76e27d' }
     } else if(locationUrl.indexOf('profilealbum.html') != -1) {
         var checkData = { jsapi_ticket: 'kgt8ON7yVITDhtdwci0qedV5qlnWY_iGUTxOIEkCiK_yP7wEhEsoClYyihaLUpAQ8FhZm_R-2fEMaRr_k55UWQ',
             nonceStr: 'ur63o2hukxogvi',
@@ -15,11 +15,11 @@ define(function(require,exports,module) {
             signature: '6d886ccdebcc8af431458a54a1fe8904b864a13e' 
         };
     } else if(locationUrl.indexOf('pay.html') != -1) {
-        var checkData ={ jsapi_ticket: 'kgt8ON7yVITDhtdwci0qedV5qlnWY_iGUTxOIEkCiK-IxIY_pKMwey1tDeShel2HS_KzMacyGgzUk-1st2Lntg',
-  nonceStr: 'q2nvsolnzeiv0a4',
-  timestamp: '1471250360',
+        var checkData ={ jsapi_ticket: 'kgt8ON7yVITDhtdwci0qedV5qlnWY_iGUTxOIEkCiK-BBcpzTPDt2kNQ3Wy0XL1j8WhiFb1uum0EC4G44o60xg',
+  nonceStr: 'pae4dcldlijjdcx',
+  timestamp: '1471338849',
   url: 'http://aries.vip.natapp.cn/lovedate/view/pay.html',
-  signature: '48e4e27b9ec46622ab4b8a060629eeb6d2f2cc19' }
+  signature: '1a5f782e867ec325f901fbbb97955b5f5b9a7b84' }
 
     }
     
@@ -27,7 +27,7 @@ define(function(require,exports,module) {
 
     !(function configWechat() {
         wx.config({
-            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
             appId: 'wxd5f871e36f664d36', // 必填，公众号的唯一标识
             timestamp: checkData.timestamp, // 必填，生成签名的时间戳
             nonceStr: checkData.nonceStr, // 必填，生成签名的随机串

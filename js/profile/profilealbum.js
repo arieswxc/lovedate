@@ -3,8 +3,8 @@
 * @Date:   2016-07-28
 */
 define(function(require,exports,module) {
-	var wx =require('wx');
-	var wx_config =require('wx_config');
+	// var wx =require('wx');
+	// var wx_config =require('wx_config');
 	var albumBig = require('albumBig');
 	var doT = require('doT');
 	var ajax = require('ajax');
@@ -15,8 +15,9 @@ define(function(require,exports,module) {
 	function getAlbums() {
 		ajax.ajax({
 			url: '/lp-file-msc/f_111_11_1.service',
-			type: 'POST',
+			type: 'post',
 			loading: true,
+			// debug: true,
 			data: {
 				// a78: '',
 				// a95: '',
@@ -37,7 +38,7 @@ define(function(require,exports,module) {
 		})
 	}
 	getAlbums();
-
+	// events();
 	function events() {
 		$('.album .img_box .album_img').click(function(e) {
 			var index = $(this).attr('data-index');

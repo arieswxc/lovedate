@@ -9,6 +9,7 @@ define(function(require,exports,module) {
 	var globalState = require('globalState');
 	var alert = require('alert');
 	var page = {};
+	var hint = require('hint');
 
 	
 	page.init = function() {
@@ -87,6 +88,7 @@ define(function(require,exports,module) {
 				console.log(res);
 			},
 			err: function(err) {
+				hint.show(err.msg);
 				console.log(err);
 			}
 		})

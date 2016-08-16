@@ -28,8 +28,11 @@ define(function(require,exports,module) {
                 delete data[key];
             }
         }
-
-        var url = 'http://192.168.0.122:8080' + json.url;
+        if(json.debug) {
+            var url = 'http://192.168.0.17:8080' + json.url;
+        } else {
+            var url = 'http://192.168.0.122:8080' + json.url;
+        }
         var loading = json.loading;
         if(loading) {
             loadingRemain(true);

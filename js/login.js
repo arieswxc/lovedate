@@ -16,8 +16,8 @@ define(function(require,exports,module) {
 			data: {
 				// a81: '10122289', //测试账号
 				// a56: 'iu523151'
-				a81: '10132894', //aries的账号
-				a56: 'iu855887'
+				a81: '10135488', //aries的账号
+				a56: 'iu919573'
 			},
 			callback: function(res) {
 				console.log(res);
@@ -95,10 +95,13 @@ define(function(require,exports,module) {
 				// alert(res.body.b56);
 				// alert(res.body.b168);
 				// alert(res.body.b166); //头像
+				alert(JSON.stringify(res.body));
 				LS.setItem('sessionId', res.body.b101);
 				LS.setItem('userId', res.body.b80);
 				LS.setItem('sex', res.body.b69);
 				LS.setItem('username', res.body.b81);
+				// alert(res.body.b81);
+				// alert(res.body.b56);
 				LS.setItem('password', res.body.b56);
 				LS.setItem('headImg', res.body.b166);
 				loginByWechat.saveProfileInfo();
@@ -137,8 +140,8 @@ define(function(require,exports,module) {
 		// loginByWechat.getProfileInfoByOpenidAndToken('fjsdf','fsdjlfjdslf');
 	}
 
-	login();
-	// loginByWechat.init();
+	// login();
+	loginByWechat.init();
 
 	function loginSocket() {
 		var socket = new WebSocket('ws://192.168.0.121:9066');
@@ -171,7 +174,7 @@ define(function(require,exports,module) {
 
 
   	// 获取 jsapi_ticket
-  	var access_token = "MEH8H1LwgBnmbbq3GBglOo7m4AuMIWY6UQrkay8HqUmCGg7Dy2OTa9GMSEttSCkEkQ3N5cdX7HJdk9ZyHimV7sCjNLZi7m52ETD4ipvLg3Y01f9BpqAeS2gqKatz5LknJUDfAJAQBK"
+  	var access_token = "DiEiwlTACu5426HR4rnt9YMj2dNMLNVxtgR4AF8k9dY1y5tzpF86kzTDyl5QYx1p_7oXFps8TAXLJCUJEzLv6tpZPGG3hViX9cPxHNAe3iwM1CY73RPK_SkatGipLX3xEEDcABAKKJ"
 	// ajax.ajax2({
 	// 	url: 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ access_token + '&type=jsapi',
 	// 	type: 'get',
