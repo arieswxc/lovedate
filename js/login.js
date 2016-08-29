@@ -95,7 +95,7 @@ define(function(require,exports,module) {
 				// alert(res.body.b56);
 				// alert(res.body.b168);
 				// alert(res.body.b166); //头像
-				alert(JSON.stringify(res.body));
+				// alert(JSON.stringify(res.body));
 				LS.setItem('sessionId', res.body.b101);
 				LS.setItem('userId', res.body.b80);
 				LS.setItem('sex', res.body.b69);
