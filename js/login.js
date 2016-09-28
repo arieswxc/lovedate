@@ -3,6 +3,7 @@
 * @Date:   2016-07-25
 */
 define(function(require,exports,module) {
+	// alert(location.href);
 	var globalState = require('../common/js/globalState');
 	var ajax = require('ajax');
 	// LS.clear();
@@ -174,7 +175,7 @@ define(function(require,exports,module) {
 
 
   	// 获取 jsapi_ticket
-  	var access_token = "DiEiwlTACu5426HR4rnt9YMj2dNMLNVxtgR4AF8k9dY1y5tzpF86kzTDyl5QYx1p_7oXFps8TAXLJCUJEzLv6tpZPGG3hViX9cPxHNAe3iwM1CY73RPK_SkatGipLX3xEEDcABAKKJ"
+ //  	var access_token = "Cz_CYe2E6LhQqdKydSCylAzKg8MEP3epJHGXY5AAemH6_RuhmYsFGc59qaG-Rl7ZcHkGSzek4F-oF-W21v88A_RWMLGMhEC4I-bLe_lJU6Q5AO-uNNAg7KFS8ttqkimBTKVjACAARC"
 	// ajax.ajax2({
 	// 	url: 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ access_token + '&type=jsapi',
 	// 	type: 'get',

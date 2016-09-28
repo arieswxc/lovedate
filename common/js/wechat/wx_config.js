@@ -2,11 +2,12 @@ define(function(require,exports,module) {
     var wx = require('wx');
     var locationUrl = location.href;
     if(locationUrl.indexOf('index.html') != -1) {
-        var checkData = { jsapi_ticket: 'kgt8ON7yVITDhtdwci0qedV5qlnWY_iGUTxOIEkCiK-BBcpzTPDt2kNQ3Wy0XL1j8WhiFb1uum0EC4G44o60xg',
-  nonceStr: 'kvkjapc7v0k3ayv',
-  timestamp: '1471338897',
+        var checkData = { jsapi_ticket: 'kgt8ON7yVITDhtdwci0qedV5qlnWY_iGUTxOIEkCiK8xL3rbeNa1i7Brc2rd4MS9GfuTMe6fjqJQHqioan2h8Q',
+  nonceStr: '0sy66jqxhzjmj9k',
+  timestamp: '1474186439',
   url: 'http://aries.vip.natapp.cn/lovedate/view/index.html',
-  signature: '6d6362371e406450babcd295863090d9fe76e27d' }
+  signature: '4409537db08bb54abd206dbab4ff147e859d775c' }
+
     } else if(locationUrl.indexOf('profilealbum.html') != -1) {
         var checkData = { jsapi_ticket: 'kgt8ON7yVITDhtdwci0qedV5qlnWY_iGUTxOIEkCiK_yP7wEhEsoClYyihaLUpAQ8FhZm_R-2fEMaRr_k55UWQ',
             nonceStr: 'ur63o2hukxogvi',
